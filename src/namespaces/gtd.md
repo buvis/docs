@@ -57,19 +57,9 @@ Reference:
 - https://github.com/Kovah/LinkAce/issues/287#issuecomment-860229837
 - https://www.linkace.org/docs/v1/cli/#import-links-from-a-html-bookmarks-file
 
-## Paperless
+## Monica
 
-### Setup
-Database paperless for user paperless must be created in central database server.
-
-1. SSH to database server
-2. Login as postgres user: `sudo -i -u postgres`
-3. Run SQL console: `psql`
-4. Create user `paperless`: `CREATE USER paperless WITH CREATEDB ENCRYPTED PASSWORD '<secret password>';`
-5. Create database `paperless`: `CREATE DATABASE paperless WITH OWNER=paperless`
-
-### Backup
-Reference: https://github.com/jonaswinkler/paperless-ng/blob/master/docs/administration.rst#document-exporter
-
-1. Shell to the pod
-2. Execute export: `document_exporter ../export --delete --use-filename-format`
+1. Run [Sequel Pro](https://www.sequelpro.com/)
+2. Connect to `monica-mariadb` service using its Cluster IP and `monica-mariadb` secret
+3. Force delete all tables
+4. `File - Import` sql backup
