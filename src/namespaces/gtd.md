@@ -62,4 +62,5 @@ Reference:
 1. Run [Sequel Pro](https://www.sequelpro.com/)
 2. Connect to `monica-mariadb` service using its Cluster IP and `monica-mariadb` secret
 3. Force delete all tables
-4. `File - Import` sql backup
+4. Create the tables by running `php artisan migrate` in monica pod
+5. `File - Import` sql backup
