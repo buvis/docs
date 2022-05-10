@@ -7,6 +7,8 @@ Install the following tools on your workstation:
 - [gnupg and sops](https://fluxcd.io/docs/guides/mozilla-sops/)
 - [ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
+- [krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install/)
+- [minio kubectl plugin](https://github.com/minio/operator/tree/master/kubectl-minio)
 
 Create accounts:
 
