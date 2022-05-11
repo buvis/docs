@@ -75,7 +75,7 @@ Longhorn connects to NAS backup directory and the backups aren't linked to the p
 1. Connect to Longhorn frontend
 2. Go to Backups
 3. Restore all volumes from backup
-4. The Longhorn volumes and PVs have a static name, so the workloads will pick the volumes restored from backup if you keep the name
+4. The Longhorn volumes and PVs have a static name, so the workloads will pick the volumes restored from backup if you keep the name (check `Use Previous Name` checkbox in Restore Backup dialog)
 
 ## Staging cluster
 
