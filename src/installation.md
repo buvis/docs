@@ -62,15 +62,6 @@ kubectl apply -f infrastructure/manifests/deploy-tigera-operator.yaml`
 kubectl apply -f infrastructure/manifests/install-calico.yaml`
 ```
 
-### Cluster DNS forwarding to home router
-
-Cert-manager challenges won't be resolved when using external DNS servers. External IP will be passed as A record and router's firewall will drop the connection from LAN to it. You need to use the internal DNS provided by home router.
-Perhaps this won't be necessary, because I changed DNS IP to home router in Proxmox node in System - DNS.
-
-1. Edit `coredns` ConfigMap
-2. Change `forward .` line to `forward . <IP_OF_HOME_ROUTER>`
-3. Restart `coredns` Deployment
-
 ### Workloads deployment
 
 [Flux](https://github.com/fluxcd/flux2) watches my [clusters repository](https://github.com/buvis-net/clusters) and makes the changes to them based on the YAML manifests.
@@ -110,7 +101,8 @@ Anything that follows supposes you are working in [staging directory](https://gi
 4. Install Proxmox following the installation wizard
 5. Enter root's password to `PM_PASS` environment variable in `.envrc`
 6. Check that you can connect to Proxmox management UI at `https://<server_ip>:8006`
-7. Remove subscription notice
+7. Use home router as DNS server: Datacenter - <NODE_NAME> - System - DNS, Search domain = buvis.net, DNS server 1 = <IP_HOME_ROUTER>.
+8. Remove subscription notice
     1. SSH to proxmox server
     2. Go to UI site source: `cd /usr/share/javascript/proxmox-widget-toolkit/`
     3. Backup the file you'll modify: `cp proxmoxlib.js proxmoxlib.js.bak`
@@ -127,15 +119,15 @@ Anything that follows supposes you are working in [staging directory](https://gi
       ```
     5. Restart Proxmox UI: `systemctl restart pveproxy.service`
     6. Clear browser cache and reconnect UI
-8. Use community repo
+9. Use community repo
     1. Edit sources: `vi /etc/apt/sources.list`
     2. Add `deb http://download.proxmox.com/debian bullseye pve-no-subscription`
-9. Disable enterprise repo
+10. Disable enterprise repo
     1. Go to apt sources directory: `cd /etc/apt/sources.list.d`
     2. Backup enterprise list: `cp pve-enterprise.list pve-enterprise.list.bak`
     3. Edit enterprise list: `vi pve-enterprise.list`
     4. Comment out this line: `deb https://enterprise.proxmox.com/debian/pve bullseye pve-enterprise`
-10. Update the system: `apt update && apt dist-upgrade`
+11. Update the system: `apt update && apt dist-upgrade`
 
 #### Fixing Asus PN50
 
@@ -161,6 +153,12 @@ References:
 7. Add cloudinit CDROM drive: `qm set 9000 --ide2 local-lvm:cloudinit`
 8. Set disk to boot: `qm set 9000 --boot c --bootdisk scsi0`
 9. Convert VM to template: `qm template 9000`
+
+### Configure router
+
+1. Assign IP addresses to VMs in `/etc/dhcpd.conf`, push router's IP as DNS to them
+2. Install bgpd on home router
+3. Copy `infrastructure/etc/bgpd.conf` to home router's `/etc` to configure bgpd to peer with the cluster
 
 ### Bootstrap the cluster
 
