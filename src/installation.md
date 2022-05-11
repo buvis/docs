@@ -62,6 +62,15 @@ kubectl apply -f infrastructure/manifests/deploy-tigera-operator.yaml`
 kubectl apply -f infrastructure/manifests/install-calico.yaml`
 ```
 
+### Cluster DNS forwarding to home router
+
+Cert-manager challenges won't be resolved when using external DNS servers. External IP will be passed as A record and router's firewall will drop the connection from LAN to it. You need to use the internal DNS provided by home router.
+Perhaps this won't be necessary, because I changed DNS IP to home router in Proxmox node in System - DNS.
+
+1. Edit `coredns` ConfigMap
+2. Change `forward .` line to `forward . <IP_OF_HOME_ROUTER>`
+3. Restart `coredns` Deployment
+
 ### Workloads deployment
 
 [Flux](https://github.com/fluxcd/flux2) watches my [clusters repository](https://github.com/buvis-net/clusters) and makes the changes to them based on the YAML manifests.
