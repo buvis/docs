@@ -79,8 +79,12 @@ To install Flux, run `make flux`
 
 ### Persistent volumes migration
 
-It should be possible to migrate the persistent volumes from previous cluster installation from Longhorn's backups. I never tried that, so I don't know the exact procedure.
+Longhorn connects to NAS backup directory and the backups aren't linked to the previous installation, so they can be used in the new cluster without any problems.
 
+1. Connect to Longhorn frontend
+2. Go to Backups
+3. Restore all volumes from backup
+4. The Longhorn volumes and PVs have a static name, so the workloads will pick the volumes restored from backup if you keep the name
 
 ## Staging cluster
 
