@@ -4,8 +4,8 @@ site_description: Bob's Universal and Very Intelligent System
 site_author: Tomáš Bouška
 site_url: https://docs.buvis.net
 
-repo_name: buvis-net/docs
-repo_url: https://github.com/buvis-net/docs
+repo_name: buvis/docs
+repo_url: https://github.com/buvis/docs
 edit_uri: "edit/main/docs/"
 
 theme:
