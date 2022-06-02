@@ -90,6 +90,8 @@ Anything that follows supposes you are working in [production directory](https:/
     3. Edit enterprise list: `vi pve-enterprise.list`
     4. Comment out this line: `deb https://enterprise.proxmox.com/debian/pve bullseye pve-enterprise`
 16. Update the system: `apt update && apt dist-upgrade`
+17. Create storage for Persistent Volumes: `<NODENAME> - Disks - ZFS`, create `<NODENAME>-tank` on entire /dev/sda
+18. Install temperature sensors reading tools: `apt install xsensors` (then use `sensors` to  read temperature measurements)
 
 ### Fix Proxmox on Asus PN50
 
@@ -111,20 +113,22 @@ References:
     - Arch Linux: it lacks overlay module, so k3s won't run
     - CentOS: all VMs are named localhost, so Kubernetes will add one node only
 3. Create VM: `qm create 9000 --name "ubuntu-cloudimg" --memory 4096 --cpu cputype=host --cores 4 --serial0 socket --vga serial0 --net0 virtio,bridge=vmbr0,tag=20 --agent enabled=1,fstrim_cloned_disks=1`
-4. The following commands use `local-lvm` as storage. If possible, create/use a ZFS pool instead.
-5. Import the image to local storage: `qm importdisk 9000 focal-server-cloudimg-amd64.img local-lvm --format qcow2`
-6. Attach the disk to VM: `qm set 9000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9000-disk-0`
-7. Add cloudinit CDROM drive: `qm set 9000 --ide2 local-lvm:cloudinit`
-8. Set disk to boot: `qm set 9000 --boot c --bootdisk scsi0`
-9. Convert VM to template: `qm template 9000`
+4. Import the image to local storage: `qm importdisk 9000 focal-server-cloudimg-amd64.img local-lvm --format qcow2`
+5. Attach the disk to VM: `qm set 9000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9000-disk-0`
+6. Add cloudinit CDROM drive: `qm set 9000 --ide2 local-lvm:cloudinit`
+7. Set disk to boot: `qm set 9000 --boot c --bootdisk scsi0`
+8. Convert VM to template: `qm template 9000`
+9. Repeat steps 2-8 on every node in Proxmox cluster. ID 9000 must be incremented as this ID must be unique inside the cluster.
 
 ### Bootstrap the cluster
 
-Run `make install`
+You may need to set workstation DNS to 1.1.1.1 when re-creating the cluster as DNS server provided by the cluster isn't running.
+
+Run `make install`.
 
 ## Staging cluster
 
-Anything that follows supposes you are working in [staging directory](https://github.com/buvis-net/clusters/tree/main/staging).
+Anything that follows supposes you are working in [staging directory](https://github.com/buvis/clusters/tree/main/staging).
 
 ### Bootstrap the cluster
 
@@ -150,7 +154,7 @@ kubectl apply -f infrastructure/manifests/install-calico.yaml`
 
 ### Workloads deployment
 
-[Flux](https://github.com/fluxcd/flux2) watches my [clusters repository](https://github.com/buvis-net/clusters) and makes the changes to them based on the YAML manifests.
+[Flux](https://github.com/fluxcd/flux2) watches my [clusters repository](https://github.com/buvis/clusters) and makes the changes to them based on the YAML manifests.
 
 To install Flux, run `make flux`
 
