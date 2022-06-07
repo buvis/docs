@@ -1,11 +1,17 @@
 ## Upgrade
 
-This is automated using [Github Action](https://github.com/buvis-net/clusters/blob/main/.github/workflows/update-flux-production.yaml).
+### Flux
+
+This is automated using [Github Action](https://github.com/buvis/clusters/blob/main/.github/workflows/update-flux-production.yaml).
+
+### Nodes
+
+Run `buvis-upgrade` provided by [buvis dotfiles](https://github.com/buvis/home).
 
 ## Usage
 
 ### Use secret values in manifests directly
-1. Define key-value pair in [cluster-secrets](https://github.com/buvis-net/clusters/blob/main/production/operations/flux-system/extras/cluster-secrets.yaml)
+1. Define key-value pair in [cluster-secrets](https://github.com/buvis/clusters/blob/main/production/operations/flux-system/extras/cluster-secrets.yaml)
     ```bash
     sops flux-system/extras/cluster-secrets.yaml
     ```
