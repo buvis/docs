@@ -6,7 +6,9 @@ This is automated using [Github Action](https://github.com/buvis/clusters/blob/m
 
 ### Nodes
 
-Run `buvis-upgrade` provided by [buvis dotfiles](https://github.com/buvis/home).
+1. Determine latest k3s version at [k3s release channels](https://update.k3s.io/v1-release/channels)
+2. Update the version in [ansible group vars - k3s_version](https://github.com/buvis/clusters/blob/main/production/infrastructure/ansible/group_vars/all/all.yml)
+3. Run `buvis-upgrade` provided by [buvis dotfiles](https://github.com/buvis/home)
 
 ## Recreate
 
