@@ -20,6 +20,7 @@ Create accounts:
 - [Slack](https://slack.com/get-started#/createnew) to get notifications from Flux
 
 ### Gitops
+
 1. [Add renovate to Github](https://github.com/marketplace/renovate)
 2. Make sure that postgres database `kubernetes` doesn't exist on datastore server
 3. Update EAB Credentials for ZeroSSL ACME
@@ -49,7 +50,6 @@ Create accounts:
 ## Production cluster
 
 Anything that follows supposes you are working in [production directory](https://github.com/buvis/clusters/tree/main/production).
-
 ### Install Proxmox
 
 1. Download [Proxmox installation iso](https://www.proxmox.com/en/downloads/category/iso-images-pve)
@@ -120,11 +120,10 @@ References:
 8. Convert VM to template: `qm template 9000`
 9. Repeat steps 2-8 on every node in Proxmox cluster. ID 9000 must be incremented as this ID must be unique inside the cluster.
 
-### Bootstrap the cluster
+### Bootstrap
 
-You may need to set workstation DNS to 1.1.1.1 when re-creating the cluster as DNS server provided by the cluster isn't running.
-
-Run `make install`.
+1. Set workstation's DNS to 1.1.1.1, because Blocky isn't running
+2. Run `make install` in cluster's directory.
 
 ## Staging cluster
 
