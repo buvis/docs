@@ -32,6 +32,7 @@ This hosts the application for personal efficiency.
 ## Linkace
 
 ### Setup
+
 1. Comment out volumeMounts in deployment.yaml (otherwise /app/.env will be readonly and step 5 will fail)
 2. Deploy by pushing to repository
 3. Exec into pod: `kubectl exec -it deployment/linkace -n gtd -- sh`
@@ -43,9 +44,11 @@ This hosts the application for personal efficiency.
 9. Uncomment volumeMounts in deployment.yaml
 10. Push back to repo
 
-Reference: https://www.linkace.org/docs/v1/setup/setup-with-docker/simple/
+Reference:
+- https://www.linkace.org/docs/v1/setup/setup-with-docker/simple/
 
 ### Import bookmarks
+
 1. Exec into pod with UTF-8 support: `LANG=en_US.UTF-8 kubectl exec -it deployment/linkace -n gtd -- sh`
 2. Start creating `storage/bookmarks.html` from heredoc: `cat << EOF > storage/bookmarks.html`
 3. Paste content from a backup `linkace-export.html` file
@@ -59,8 +62,40 @@ Reference:
 
 ## Monica
 
+### Backup to sql
+
+1. When you use Settings - Export data - Export to SQL it will probably fail
+2. Copy exports directory from `<monica-pod>`: `kubectl cp gtd/<monica-pod>:/var/www/html/storage/app/public/exports ~/Downloads/monica/`
+
+Reference:
+- https://github.com/monicahq/monica/issues/5937#issuecomment-1084913591
+
+### Restore from sql
+
 1. Run [Sequel Pro](https://www.sequelpro.com/)
 2. Connect to `monica-mariadb` service using its Cluster IP and `monica-mariadb` secret
 3. Force delete all tables
 4. Create the tables by running `php artisan migrate` in monica pod
 5. `File - Import` sql backup
+
+Reference:
+- https://github.com/monicahq/monica/issues/5937#issuecomment-1084913591
+
+### Client setup
+
+#### iPhone
+
+1. Settings - Contacts - Accounts - Add Account
+2. Server = `crm.buvis.net`
+3. Username = `tomas@buvis.net`
+4. Password = `<generate token in https://crm.buvis.net/settings/api>`
+5. Rename the account to `baikal`
+6. Advanced settings - Account URL = https://crm.buvis.net/dav/principals/tomas@buvis.net/
+
+#### macOS
+
+1. System Settings - Internet Accounts - Add Account
+2. Username = `tomas@buvis.net`
+3. Server address = `crm.buvis.net`
+4. Description = `buvis`
+5. Password = `<generate token in https://crm.buvis.net/settings/api>`/cal.php/principals/<USER>`

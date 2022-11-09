@@ -2,34 +2,35 @@
 
 ### Flux
 
-This is automated using [Github Action](https://github.com/buvis/clusters/blob/main/.github/workflows/update-flux-production.yaml).
+This is automated using [Github Action](https://github.com/buvis/clusters/blob/main/.github/workflows/update-flux-home.yaml).
 
 ### Nodes
 
-1. Determine latest k3s version at [k3s release channels](https://update.k3s.io/v1-release/channels)
-2. Update the version in [ansible group vars - k3s_version](https://github.com/buvis/clusters/blob/main/production/infrastructure/ansible/group_vars/all/all.yaml)
-3. Run `buvis-upgrade` provided by [buvis dotfiles](https://github.com/buvis/home)
+TODO: I switched to Talos, so I have to figure this out
 
 ## Recreate
 
 ### Backup
 
-1. Go to Longhorn UI and take note of volume names and size which you want to restore into recreated cluster
-2. Check that daily backup is available for volumes from step 1
-3. Perform application specific backup for the applications considered critical
+1. Run backup job manually for every PVC: `buvisctl backup -n <NAMESPACE> <PVC>`
+2. Perform application specific backup for the applications considered critical
     - home-assistant
     - linkace
     - monica
-4. Scale down the deployments with fresh data and trigger a backup
 
 ### Destroy
 
-Run `make destroy` in cluster's directory.
+Run `buvisctl destroy` in cluster's directory.
 
 ### Bootstrap
 
 1. Set workstation's DNS to 1.1.1.1, because Blocky isn't running
-2. Run `make install` in cluster's directory.
+2. Run `buvisctl bootstrap` in cluster's directory.
+
+### Restore
+
+Repeat for every PVC: `buvisctl backup -n <NAMESPACE> <PVC>`
+
 
 ## Usage
 
@@ -112,7 +113,7 @@ dependsOn:
     flux get sources git -A
     flux get sources chart -A
     ```
-- Get more information on helm release
+- Get more information on helm release (start here when "install retries exhausted")
     ```bash
     kubectl describe helmrelease <RELEASE_NAME> -n <RELEASE_NAMESPACE>
     ```
