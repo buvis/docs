@@ -1,18 +1,18 @@
 ## Preparation
 
-Clone https://github.com/buvis/clusters/ repository to your workstation. Please note that modifications will be necessary to make it work for you.
+Clone [https://github.com/buvis/clusters/](https://github.com/buvis/clusters/) repository to your workstation. Please note that modifications will be necessary to make it work for you.
 
 ### Tools
 
 1. Install the following tools on your workstation:
-- [pre-commit](https://pre-commit.com/#installation)
-- [direnv](https://direnv.net/docs/installation.html)
-- [gnupg and sops](https://fluxcd.io/docs/guides/mozilla-sops)
-- [talosctl](https://github.com/siderolabs/talos/releases)
-- [jq](https://stedolan.github.io/jq/download)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
-- [krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install)
-- [minio kubectl plugin](https://github.com/minio/operator/tree/master/kubectl-minio)
+    - [pre-commit](https://pre-commit.com/#installation)
+    - [direnv](https://direnv.net/docs/installation.html)
+    - [gnupg and sops](https://fluxcd.io/docs/guides/mozilla-sops)
+    - [talosctl](https://github.com/siderolabs/talos/releases)
+    - [jq](https://stedolan.github.io/jq/download)
+    - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
+    - [krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install)
+    - [minio kubectl plugin](https://github.com/minio/operator/tree/master/kubectl-minio)
 2. Install scripts requirements: `pip install -r requirements.txt` in clusters repository root directory
 
 ### Services
