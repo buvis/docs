@@ -1,6 +1,6 @@
 import click
 
-from commands import CommandUpdate
+from commands import CommandDiscover, CommandUpdate
 
 
 @click.group(help="CLI tool to manage kubernetes apps catalog")
@@ -8,15 +8,16 @@ def cli():
     pass
 
 
+@cli.command("discover")
+def discover():
+    cmd = CommandDiscover()
+    cmd.execute()
+
+
 @cli.command("update")
-@click.option("-r",
-              "--refresh",
-              default=False,
-              is_flag=True,
-              help="Refresh list of apps")
-def check(refresh):
+def update():
     cmd = CommandUpdate()
-    cmd.execute(refresh)
+    cmd.execute()
 
 
 if __name__ == "__main__":

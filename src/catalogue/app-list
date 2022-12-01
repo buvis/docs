@@ -39,10 +39,12 @@ bonob
 booksonic-air
 bookstack
 botkube
+buildkitd
 busybox
 calibre
 calibre-web
 calibre-web-fic
+calico
 cdn
 cdn-nginx
 ceph-csi-cephfs
@@ -96,12 +98,16 @@ democratic-csi
 dendrite
 descheduler
 dex
+discord-stock-ticker
 discord-support-threads-bot
 dizquetv
 dnsmadeeasy-webhook
 dnsutils
+docker-mailserver
 docker-registry
+docker-sftp
 dokuwiki
+doods
 double-take
 drone
 drone-extension
@@ -139,6 +145,7 @@ firefly-iii
 flame
 flaresolverr
 flood
+flux2
 focalboard
 foldingathome
 forecastle
@@ -204,6 +211,7 @@ idrac-foxtrot-console
 idrac-whiskey-console
 idrac6
 ihatemoney
+imagestore
 immich-machine-learning
 immich-microservices
 immich-proxy
@@ -228,6 +236,8 @@ jellyfin
 jellyfin-cluster
 jellyseerr
 jenkins
+jetbrains-projector
+jitsi-meet
 jiva
 joplin
 joplin-server
@@ -242,12 +252,14 @@ karma
 kavita
 keycloak
 kiali-operator
+kodi-headless
 komga
 kopia
 kopia-ui
 kube-cleanup-operator
 kube-fledged
 kube-ops-view
+kube-prometheus
 kube-prometheus-stack
 kubeclarity
 kubed
@@ -269,6 +281,7 @@ libreoffice
 librespeed
 lidarr
 lidarr-exporter
+linkace
 linkding
 linkerd-control-plane
 linkerd-crds
@@ -327,6 +340,7 @@ minio
 minio-console
 mkdocs-git-sync
 modem-stats
+mojopatse
 monerod
 monica
 mopidy
@@ -334,6 +348,7 @@ mosquitto
 mqtt-exporter
 multus
 mumble
+my blog
 mylar
 mysql
 mysql-innodbcluster
@@ -364,6 +379,7 @@ nfs-shared
 nfs-subdir-external-provisioner
 nfty-push-notifications
 nginx
+nginx-ingress
 nginx-ingress-controller
 nginx-php
 nightscout
@@ -395,6 +411,7 @@ openfaas
 openhab
 openkm
 openldap-stack-ha
+openspeedtest
 openweathermap-exporter
 organizr
 otel-collector
@@ -420,6 +437,7 @@ pgadmin
 pgadmin4
 photoprism
 phpmyadmin
+piaware
 picoshare
 pihole
 pinry
@@ -438,6 +456,7 @@ portainer
 postgres-operator
 postgres-operator-ui
 postgresql
+powerdns
 powerdns-admin
 pretend-youre-xyzzy
 privatebin
@@ -493,6 +512,7 @@ redis-operator
 redisinsight
 redpanda
 reflector
+reg
 registry
 reloader
 remote
@@ -511,9 +531,11 @@ rhasspy
 ring-mqtt
 rocketchat
 rook-ceph
+rook-ceph-backup-tools
 rook-ceph-cluster
 rook-toolbox
 roon
+rtorrent
 rtorrent-flood
 rtorrent-rutorrent
 rtsp-to-web
@@ -554,6 +576,7 @@ smtp-relay
 snapcast
 snapserver
 snapshot-controller
+snapshot-validation-webhook
 sonarr
 sonarr-exporter
 sonarr-uhd
@@ -595,6 +618,7 @@ tor-controller
 torrserver
 tplink-plug-exporter
 tplink-smartplug-exporter
+traccar
 traefik
 traefik-forward-auth
 transmission
@@ -604,6 +628,7 @@ trino
 trivy
 trivy-exporter
 trivy-operator
+trow
 truecommand
 tt-rss
 tvheadend
@@ -639,6 +664,7 @@ webtrees
 wg-easy
 wger
 wger-postgres
+whalestream-bot
 whisparr
 whoami
 whoogle
@@ -651,6 +677,9 @@ woodpecker-agent
 woodpecker-server
 wordpress-operator
 wordpress-site
+ws-staging-bot
+wyoa-bot
+wyze-bridge
 x509-certificate-exporter
 xbackbone
 xbvr
