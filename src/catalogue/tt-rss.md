@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader and aggregator
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Fully configurable Zwave to MQTT Gateway and Control Panel
 
 ## k8 at home search
 

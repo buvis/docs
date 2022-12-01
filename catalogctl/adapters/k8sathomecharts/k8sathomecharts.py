@@ -22,5 +22,5 @@ class k8sathomechartsAdapter:
         for app in self.apps:
             app_name, app_description = app
 
-            if name == name:
+            if app_name == name:
                 return app_description

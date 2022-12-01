@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Transmission is a cross-platform BitTorrent client
 
 ## k8 at home search
 

@@ -10,13 +10,13 @@ class AppItemAdapter:
         self.name = name
         self.nice_name = self.name.replace("-", " ").title()
         self.path = Path.joinpath(CATALOGUE_DIR, self.name + ".md")
-        self.description = "No description provided."
 
     def is_catalogued(self):
         return self.path.is_file()
 
     def scrape(self, scraper):
         self.url_k8sathome_search = K8SATHOME_SEARCH_URL + self.name
+        self.description = scraper.get_description(self.name)
 
     def read(self):
         if self.is_catalogued():

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A lightweight open source alternative to linktree
 
 ## k8 at home search
 

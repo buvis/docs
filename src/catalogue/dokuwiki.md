@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn't require a database.
 
 ## k8 at home search
 

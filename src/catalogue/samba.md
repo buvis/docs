@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A simple in-cluster Samba server
 
 ## k8 at home search
 

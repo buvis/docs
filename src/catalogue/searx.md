@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Searx is a privacy-respecting, hackable metasearch engine
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+qBittorrent is a cross-platform free and open-source BitTorrent client
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Dendrite Matrix Homeserver
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Track your cryptocurrency holdings/portfolio
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Teedy is an open source, lightweight document management system for individuals and businesses.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Unified UI and API for processing and training images for facial recognition.
 
 ## k8 at home search
 

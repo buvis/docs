@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+ownCloud Infinite Scale is a self-hosted file sync and share server.
 
 ## k8 at home search
 

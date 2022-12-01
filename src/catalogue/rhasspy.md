@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+rhasspy helm package
 
 ## k8 at home search
 

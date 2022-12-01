@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A lightweight NodeJS server that emulates the iOS HomeKit API
 
 ## k8 at home search
 

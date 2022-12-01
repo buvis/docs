@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Mylar is the automated Comic Book downloader (cbr/cbz) for use with various download clients.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+rTorrent is a stable, high-performance and low resource consumption BitTorrent client.
 
 ## k8 at home search
 

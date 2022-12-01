@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Usenet meta search
 
 ## k8 at home search
 

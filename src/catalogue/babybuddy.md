@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A buddy for babies! Helps caregivers track sleep, feedings, diaper changes, tummy time and more to learn about and predict baby's needs without (as much) guess work.
 
 ## k8 at home search
 

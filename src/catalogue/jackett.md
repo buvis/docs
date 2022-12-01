@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+API Support for your favorite torrent trackers
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A minimal forward authentication service that provides OAuth/SSO login and authentication for the traefik reverse proxy/load balancer
 
 ## k8 at home search
 

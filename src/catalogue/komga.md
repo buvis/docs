@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A comics/mangas server to serve/stream pages via API
 
 ## k8 at home search
 

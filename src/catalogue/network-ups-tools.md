@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Network UPS Tools is a collection of programs which provide a common interface for monitoring and administering UPS, PDU and SCD hardware.
 
 ## k8 at home search
 

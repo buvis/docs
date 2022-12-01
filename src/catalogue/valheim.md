@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Valheim dedicated gameserver with automatic update and world backup support
 
 ## k8 at home search
 

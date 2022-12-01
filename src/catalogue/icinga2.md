@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A monitoring system which checks the availability of your network resources, notifies users of outages, and generates performance data for reporting.
 
 ## k8 at home search
 

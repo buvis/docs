@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Open Source Continuous File Synchronization
 
 ## k8 at home search
 

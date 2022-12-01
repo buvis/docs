@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Bot for Prometheus Alertmanager
 
 ## k8 at home search
 

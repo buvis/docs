@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+periodic cable modem data collection and save the results to InfluxDB
 
 ## k8 at home search
 

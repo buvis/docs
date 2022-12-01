@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Webhook for Prometheus Alertmanager to listen for notifications and pushes them to Discord channel
 
 ## k8 at home search
 

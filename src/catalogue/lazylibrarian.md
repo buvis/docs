@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A Helm chart for deploying LazyLibrarian
 
 ## k8 at home search
 

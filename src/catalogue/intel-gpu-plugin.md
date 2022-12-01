@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+The Intel GPU plugin facilitates offloading the processing of computation intensive workloads to GPU hardware
 
 ## k8 at home search
 

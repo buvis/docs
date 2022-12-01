@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Discord bot that provides metrics from a Discord server
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A developer-oriented health dashboard that gives you the ability to monitor your services using HTTP, ICMP, TCP, and even DNS queries.
 
 ## k8 at home search
 

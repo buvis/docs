@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A web-based collaborative LaTeX editor
 
 ## k8 at home search
 

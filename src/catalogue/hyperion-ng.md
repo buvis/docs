@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Hyperion is an opensource Bias or Ambient Lighting implementation
 
 ## k8 at home search
 

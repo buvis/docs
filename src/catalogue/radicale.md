@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A simple CalDAV (calendar) and CardDAV (contact) server.
 
 ## k8 at home search
 

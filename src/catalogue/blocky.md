@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+DNS proxy as ad-blocker for local network
 
 ## k8 at home search
 

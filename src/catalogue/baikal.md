@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Baïkal is a lightweight CalDAV+CardDAV server. It offers a web interface with management of users, address books and calendars.
 
 ## k8 at home search
 

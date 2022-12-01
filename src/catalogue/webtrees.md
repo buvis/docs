@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Open-source online collaborative genealogy application
 
 ## k8 at home search
 

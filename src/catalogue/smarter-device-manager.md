@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Manage hardware resource allocation without a need for privileged containers
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+OctoPrint is the snappy web interface for your 3D printer
 
 ## k8 at home search
 

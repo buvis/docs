@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Simple, private file sharing.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Airsonic is a Free and Open Source community driven media server
 
 ## k8 at home search
 

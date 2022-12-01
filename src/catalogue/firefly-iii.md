@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Firefly III: a personal finances manager
 
 ## k8 at home search
 

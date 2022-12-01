@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Tdarr is a self hosted web-app for automating media library transcode/remux management and making sure your files are exactly how you need them to be in terms of codecs/streams/containers etc.
 
 ## k8 at home search
 

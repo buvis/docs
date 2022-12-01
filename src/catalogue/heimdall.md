@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+An Application dashboard and launcher
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A self hostable application for saving web pages, freely.
 
 ## k8 at home search
 

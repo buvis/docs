@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Streams graphic applications/games (retroarch, firefox, steam) runing on Kubernetes
 
 ## k8 at home search
 

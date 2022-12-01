@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.
 
 ## k8 at home search
 

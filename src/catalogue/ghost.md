@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Ghost is a blogging and publishing software
 
 ## k8 at home search
 

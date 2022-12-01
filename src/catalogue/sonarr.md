@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Smart PVR for newsgroup and bittorrent users
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Paperless - Index and archive all of your scanned paper documents
 
 ## k8 at home search
 

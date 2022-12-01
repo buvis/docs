@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+DSMR-protocol reader, telegram data storage and energy consumption visualizer.
 
 ## k8 at home search
 

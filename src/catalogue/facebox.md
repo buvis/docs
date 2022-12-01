@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Facebox detects and identifies faces in photos. You can teach facebox with as little as one sample image.
 
 ## k8 at home search
 

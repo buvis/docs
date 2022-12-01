@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Dedicated server for 7 Days to Die
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+A self-hosted data logger for your Tesla 🚘
 
 ## k8 at home search
 

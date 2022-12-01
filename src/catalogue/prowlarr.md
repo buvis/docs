@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.
 
 ## k8 at home search
 

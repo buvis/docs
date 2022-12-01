@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+The to-do app to organize your life
 
 ## k8 at home search
 

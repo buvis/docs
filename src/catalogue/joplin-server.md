@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+This server allows you to sync any Joplin client
 
 ## k8 at home search
 

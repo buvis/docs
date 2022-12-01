@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+M3U Proxy for Plex DVR and Emby Live TV.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Prometheus NUT Exporter a service monitor to send NUT server metrics to a Prometheus instance.
 
 ## k8 at home search
 

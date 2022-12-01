@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Kanboard is a free and open source Kanban project management software.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Take control over your live stream video by running it yourself. Streaming + chat out of the box.
 
 ## k8 at home search
 

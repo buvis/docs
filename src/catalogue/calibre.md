@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Calibre is a powerful and easy to use e-book manager.
 
 ## k8 at home search
 

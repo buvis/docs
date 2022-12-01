@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+NZBGet is a Usenet downloader client
 
 ## k8 at home search
 

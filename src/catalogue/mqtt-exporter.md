@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Simple and generic Prometheus exporter for MQTT. Tested with Mosquitto MQTT and Xiaomi sensors.
 
 ## k8 at home search
 

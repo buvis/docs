@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+An organizer for your porn, written in Go
 
 ## k8 at home search
 

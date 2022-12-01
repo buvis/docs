@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+ruTorrent is a popular rtorrent client with a webui for ease of use.
 
 ## k8 at home search
 

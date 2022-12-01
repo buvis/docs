@@ -2,7 +2,7 @@
 
 ## Description
 
-No description provided.
+Looks and smells like Sonarr but made for music
 
 ## k8 at home search
 
