@@ -88,7 +88,7 @@ This cluster is based on Virtual Machines provided by Proxmox.
 
 ### Create VM template
 
-1. SSH to proxmox machine
+1. SSH to Proxmox machine
 3. Get the latest image for VM: `wget https://github.com/siderolabs/talos/releases/download/$(curl --silent "https://api.github.com/repos/siderolabs/talos/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')/talos-amd64.iso`.
 4. Create VM: `qm create 9000 --name "talos" --memory 4096 --cpu cputype=host --cores 4 --serial0 socket --vga serial0 --net0 virtio,bridge=vmbr0,tag=20 --agent enabled=1,fstrim_cloned_disks=1`
 5. Import the image to local storage: `qm importdisk 9000 talos-amd64.iso local-lvm --format qcow2`
@@ -96,7 +96,7 @@ This cluster is based on Virtual Machines provided by Proxmox.
 7. Add cloudinit CDROM drive: `qm set 9000 --ide2 local:cloudinit`
 8. Set disk to boot: `qm set 9000 --boot c --bootdisk scsi0`
 9. Convert VM to template: `qm template 9000`
-10. Repeat steps 2-8 on every node in Proxmox cluster. ID 9000 must be incremented as this ID must be unique inside the cluster.
+10. Repeat steps 2-8 on every Proxmox machine. *NOTE* If you created a Proxmox cluster, then ID 9000 must be incremented as it must be unique inside the cluster.
 
 ### Bootstrap
 

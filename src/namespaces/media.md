@@ -22,9 +22,17 @@ This hosts media related applications.
     - language: eng,und,ces,cze
     - commentary: false
     - tag_title: false
-  d. Remove subtitles
-  e. Migz-Transcode Using CPU & FFMPEG:
+  d. Keep one audio stream
+    - audioCodec: ac3
+    - language: depends on library
+    - channels: 2
+  e. Remove subtitles
+  f. Migz-Transcode Using CPU & FFMPEG:
     - container: mkv
     - enable_10bit: false
     - force_conform: false
-  f. New file size check
+  g. New file size check
+  h. Keep original file dates and times after transcoding
+    - server: 127.0.0.1
+    - extensions: <empty>
+    - log: false

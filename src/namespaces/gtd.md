@@ -37,7 +37,7 @@ This hosts the application for personal efficiency.
 2. Deploy by pushing to repository
 3. Exec into pod: `kubectl exec -it deployment/linkace -n gtd -- sh`
 4. Fix /app/.env permissions: `chmod 666 /app/.env`
-5. Navigate to [Linkace on buvis](https://bookmarks.buvis.net) and complete the setup
+5. Navigate to [Linkace on buvis](https://bookmarks.buvis.net) to start the setup
 6. Database address and password can be found in `linkace-env` ConfigMap
 7. Create the user account
 8. Get app key from pod's `/app/.env` and copy it to `cluster-secrets` `SECRET_LINKACE_APP_KEY`
