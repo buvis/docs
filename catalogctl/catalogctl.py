@@ -1,6 +1,5 @@
 import click
 
-from adapters import console
 from commands import CommandUpdate
 
 
@@ -10,9 +9,15 @@ def cli():
 
 
 @cli.command("update")
-def check():
+@click.option("-r",
+              "--refresh",
+              default=False,
+              is_flag=True,
+              help="Refresh list of apps")
+def check(refresh):
     cmd = CommandUpdate()
-    cmd.execute()
+    cmd.execute(refresh)
+
 
 if __name__ == "__main__":
     cli()
