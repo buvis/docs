@@ -1,0 +1,9 @@
+# Duplicati
+
+## Description
+
+No description provided.
+
+## k8 at home search
+
+- [duplicati](https://nanne.dev/k8s-at-home-search/#/duplicati)

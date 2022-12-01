@@ -1,2 +1,2 @@
-from .update.update import CommandUpdate
+from .scrape.scrape import CommandScrape
 from .discover.discover import CommandDiscover

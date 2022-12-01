@@ -3,7 +3,7 @@ from pathlib import Path
 APP_LIST_PATH = Path("src/catalogue/app-list").absolute()
 
 
-class applistAdapter:
+class AppListAdapter:
 
     def __init__(self):
         self.apps = []

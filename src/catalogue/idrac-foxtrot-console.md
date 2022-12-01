@@ -1,0 +1,9 @@
+# Idrac Foxtrot Console
+
+## Description
+
+No description provided.
+
+## k8 at home search
+
+- [idrac-foxtrot-console](https://nanne.dev/k8s-at-home-search/#/idrac-foxtrot-console)

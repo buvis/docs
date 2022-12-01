@@ -1,4 +1,4 @@
-from adapters import (applistAdapter, console, k8sathomechartsAdapter,
+from adapters import (AppListAdapter, console, k8sathomechartsAdapter,
                       k8sathomesearchAdapter)
 
 
@@ -7,7 +7,7 @@ class CommandDiscover:
     def __init__(self):
         self.search = k8sathomesearchAdapter()
         self.k8sathomecharts = k8sathomechartsAdapter()
-        self.applist = applistAdapter()
+        self.applist = AppListAdapter()
 
     def execute(self):
         app_names_search = self.search.list_all_apps()

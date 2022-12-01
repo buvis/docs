@@ -1,6 +1,6 @@
 import click
 
-from commands import CommandDiscover, CommandUpdate
+from commands import CommandDiscover, CommandScrape
 
 
 @click.group(help="CLI tool to manage kubernetes apps catalog")
@@ -14,9 +14,9 @@ def discover():
     cmd.execute()
 
 
-@cli.command("update")
-def update():
-    cmd = CommandUpdate()
+@cli.command("scrape")
+def scrape():
+    cmd = CommandScrape()
     cmd.execute()
 
 
