@@ -2,7 +2,7 @@
 
 ## Description
 
-beets helm package
+beets helm package.
 
 ## k8 at home search
 

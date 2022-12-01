@@ -2,7 +2,7 @@
 
 ## Description
 
-Jellyfin is a Free Software Media System
+Jellyfin is a Free Software Media System.
 
 ## k8 at home search
 

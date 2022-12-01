@@ -2,7 +2,7 @@
 
 ## Description
 
-The Lounge, modern web IRC client designed for self-hosting
+The Lounge, modern web IRC client designed for self-hosting.
 
 ## k8 at home search
 

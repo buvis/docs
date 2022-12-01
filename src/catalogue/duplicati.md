@@ -2,7 +2,7 @@
 
 ## Description
 
-Store securely encrypted backups on cloud storage services!
+Store securely encrypted backups on cloud storage services!.
 
 ## k8 at home search
 

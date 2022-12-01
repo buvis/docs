@@ -2,7 +2,7 @@
 
 ## Description
 
-snapcast helm package
+snapcast helm package.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Node-RED is low-code programming for event-driven applications
+Node-RED is low-code programming for event-driven applications.
 
 ## k8 at home search
 

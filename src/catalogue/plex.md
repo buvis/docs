@@ -2,7 +2,7 @@
 
 ## Description
 
-Plex Media Server
+Plex Media Server.
 
 ## k8 at home search
 

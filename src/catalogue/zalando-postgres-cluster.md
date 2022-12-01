@@ -2,7 +2,7 @@
 
 ## Description
 
-Creates a postgres cluster using the Zalando Postgres operator and local storage
+Creates a postgres cluster using the Zalando Postgres operator and local storage.
 
 ## k8 at home search
 

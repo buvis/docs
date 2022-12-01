@@ -2,7 +2,7 @@
 
 ## Description
 
-Speedtest Exporter made in python using the official speedtest bin
+Speedtest Exporter made in python using the official speedtest bin.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-A self-hosted, ad-free, privacy-respecting metasearch engine
+A self-hosted, ad-free, privacy-respecting metasearch engine.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Deluge is a torrent download client
+Deluge is a torrent download client.
 
 ## k8 at home search
 

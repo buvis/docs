@@ -2,7 +2,7 @@
 
 ## Description
 
-A Personal Relationship Management tool to help you organize your social life
+A Personal Relationship Management tool to help you organize your social life.
 
 ## k8 at home search
 

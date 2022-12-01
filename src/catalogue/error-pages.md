@@ -2,7 +2,7 @@
 
 ## Description
 
-Server error pages in the docker image
+Server error pages in the docker image.
 
 ## k8 at home search
 

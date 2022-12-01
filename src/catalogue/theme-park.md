@@ -2,7 +2,7 @@
 
 ## Description
 
-theme-park helm package
+theme-park helm package.
 
 ## k8 at home search
 

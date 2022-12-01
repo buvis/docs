@@ -2,7 +2,7 @@
 
 ## Description
 
-Cert-Manager Webhook for DNSMadeEasy
+Cert-Manager Webhook for DNSMadeEasy.
 
 ## k8 at home search
 

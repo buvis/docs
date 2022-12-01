@@ -2,7 +2,7 @@
 
 ## Description
 
-Streams graphic applications/games (retroarch, firefox, steam) runing on Kubernetes
+Streams graphic applications/games (retroarch, firefox, steam) runing on Kubernetes.
 
 ## k8 at home search
 

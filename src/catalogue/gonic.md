@@ -2,7 +2,7 @@
 
 ## Description
 
-Music streaming server / subsonic server API implementation
+Music streaming server / subsonic server API implementation.
 
 ## k8 at home search
 

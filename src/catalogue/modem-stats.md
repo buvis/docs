@@ -2,7 +2,7 @@
 
 ## Description
 
-periodic cable modem data collection and save the results to InfluxDB
+periodic cable modem data collection and save the results to InfluxDB.
 
 ## k8 at home search
 

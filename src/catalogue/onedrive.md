@@ -2,7 +2,7 @@
 
 ## Description
 
-A free Microsoft OneDrive Client which supports OneDrive Personal, OneDrive for Business, OneDrive for Office365, and SharePoint
+A free Microsoft OneDrive Client which supports OneDrive Personal, OneDrive for Business, OneDrive for Office365, and SharePoint.
 
 ## k8 at home search
 

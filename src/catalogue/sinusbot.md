@@ -2,7 +2,7 @@
 
 ## Description
 
-TeamSpeak & Discord Bot
+TeamSpeak & Discord Bot.
 
 ## k8 at home search
 

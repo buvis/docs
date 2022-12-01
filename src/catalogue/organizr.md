@@ -2,7 +2,7 @@
 
 ## Description
 
-HTPC/Homelab Services Organizer
+HTPC/Homelab Services Organizer.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-xbvr helm package
+xbvr helm package.
 
 ## k8 at home search
 

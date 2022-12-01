@@ -2,7 +2,7 @@
 
 ## Description
 
-A read-only system dashboard for multiple K8s clusters
+A read-only system dashboard for multiple K8s clusters.
 
 ## k8 at home search
 

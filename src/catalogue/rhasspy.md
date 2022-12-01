@@ -2,7 +2,7 @@
 
 ## Description
 
-rhasspy helm package
+rhasspy helm package.
 
 ## k8 at home search
 

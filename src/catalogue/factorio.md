@@ -2,7 +2,7 @@
 
 ## Description
 
-Factorio dedicated steam game server
+Factorio dedicated steam game server.
 
 ## k8 at home search
 

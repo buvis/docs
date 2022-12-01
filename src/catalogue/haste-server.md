@@ -2,7 +2,7 @@
 
 ## Description
 
-Simple text sharing
+Simple text sharing.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Bridges events and allows you to control your Zigbee devices via MQTT
+Bridges events and allows you to control your Zigbee devices via MQTT.
 
 ## k8 at home search
 

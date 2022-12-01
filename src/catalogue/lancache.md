@@ -2,7 +2,7 @@
 
 ## Description
 
-LanCache Monolithic - a caching proxy server for game download content
+LanCache Monolithic - a caching proxy server for game download content.
 
 ## k8 at home search
 

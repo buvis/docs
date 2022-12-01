@@ -2,7 +2,7 @@
 
 ## Description
 
-A simple null file http and https server
+A simple null file http and https server.
 
 ## k8 at home search
 

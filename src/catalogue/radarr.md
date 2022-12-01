@@ -2,7 +2,7 @@
 
 ## Description
 
-A fork of Sonarr to work with movies à la Couchpotato
+A fork of Sonarr to work with movies à la Couchpotato.
 
 ## k8 at home search
 

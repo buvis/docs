@@ -2,7 +2,7 @@
 
 ## Description
 
-strongSwan – the OpenSource IPsec-based VPN Solution
+strongSwan – the OpenSource IPsec-based VPN Solution.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Admision controller to change the default gateway and DNS server of PODs
+Admision controller to change the default gateway and DNS server of PODs.
 
 ## k8 at home search
 

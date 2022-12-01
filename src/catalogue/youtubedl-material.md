@@ -2,7 +2,7 @@
 
 ## Description
 
-Self-hosted YouTube downloader built on Material Design
+Self-hosted YouTube downloader built on Material Design.
 
 ## k8 at home search
 

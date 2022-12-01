@@ -2,7 +2,7 @@
 
 ## Description
 
-Emby Server is a home media server
+Emby Server is a home media server.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Navidrome is an open source web-based music collection server and streamer
+Navidrome is an open source web-based music collection server and streamer.
 
 ## k8 at home search
 

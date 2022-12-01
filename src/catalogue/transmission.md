@@ -2,7 +2,7 @@
 
 ## Description
 
-Transmission is a cross-platform BitTorrent client
+Transmission is a cross-platform BitTorrent client.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-A web application made to ease shared budget management
+A web application made to ease shared budget management.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-scrypted helm package
+scrypted helm package.
 
 ## k8 at home search
 

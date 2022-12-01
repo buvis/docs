@@ -2,7 +2,7 @@
 
 ## Description
 
-Want a Movie or TV Show on Plex or Emby? Use Ombi!
+Want a Movie or TV Show on Plex or Emby? Use Ombi!.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Collect ALL UniFi Controller, Site, Device & Client Data - Export to InfluxDB or Prometheus
+Collect ALL UniFi Controller, Site, Device & Client Data - Export to InfluxDB or Prometheus.
 
 ## k8 at home search
 

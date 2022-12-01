@@ -2,7 +2,7 @@
 
 ## Description
 
-Autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering
+Autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering.
 
 ## k8 at home search
 

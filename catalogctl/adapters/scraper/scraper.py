@@ -14,6 +14,9 @@ class ScraperAdapter:
         kah_charts_description = self.kah_charts.get_app_description(app_name)
 
         if kah_charts_description:
+            if not kah_charts_description.endswith("."):
+                kah_charts_description = kah_charts_description + "."
+
             return kah_charts_description
         else:
             return "No description provided."

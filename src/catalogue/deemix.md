@@ -2,7 +2,7 @@
 
 ## Description
 
-Deemix is a Deezer Download Manager
+Deemix is a Deezer Download Manager.
 
 ## k8 at home search
 

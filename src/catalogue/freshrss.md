@@ -2,7 +2,7 @@
 
 ## Description
 
-FreshRSS is a self-hosted RSS feed aggregator
+FreshRSS is a self-hosted RSS feed aggregator.
 
 ## k8 at home search
 

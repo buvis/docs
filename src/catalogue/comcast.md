@@ -2,7 +2,7 @@
 
 ## Description
 
-periodic comcast data usage checks and save the results to InfluxDB
+periodic comcast data usage checks and save the results to InfluxDB.
 
 ## k8 at home search
 

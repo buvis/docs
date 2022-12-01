@@ -2,7 +2,7 @@
 
 ## Description
 
-A fancy self-hosted monitoring tool for your websites and applications
+A fancy self-hosted monitoring tool for your websites and applications.
 
 ## k8 at home search
 

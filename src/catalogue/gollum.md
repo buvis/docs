@@ -2,7 +2,7 @@
 
 ## Description
 
-Gollum is a simple wiki system built on top of Git
+Gollum is a simple wiki system built on top of Git.
 
 ## k8 at home search
 

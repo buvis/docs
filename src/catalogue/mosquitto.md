@@ -2,7 +2,7 @@
 
 ## Description
 
-Eclipse Mosquitto - An open source MQTT broker
+Eclipse Mosquitto - An open source MQTT broker.
 
 ## k8 at home search
 

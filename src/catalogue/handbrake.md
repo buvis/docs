@@ -2,7 +2,7 @@
 
 ## Description
 
-handbrake helm package
+handbrake helm package.
 
 ## k8 at home search
 

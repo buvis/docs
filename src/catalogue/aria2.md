@@ -2,7 +2,7 @@
 
 ## Description
 
-aria server for downloading web content
+aria server for downloading web content.
 
 ## k8 at home search
 

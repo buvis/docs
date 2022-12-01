@@ -2,7 +2,7 @@
 
 ## Description
 
-Usenet meta search
+Usenet meta search.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Maddy Mail Server
+Maddy Mail Server.
 
 ## k8 at home search
 

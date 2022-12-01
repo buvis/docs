@@ -2,7 +2,7 @@
 
 ## Description
 
-A management console for minio server and operator
+A management console for minio server and operator.
 
 ## k8 at home search
 

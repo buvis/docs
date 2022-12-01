@@ -2,7 +2,7 @@
 
 ## Description
 
-Headless Chrome Node.js API
+Headless Chrome Node.js API.
 
 ## k8 at home search
 

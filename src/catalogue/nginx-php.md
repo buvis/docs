@@ -2,7 +2,7 @@
 
 ## Description
 
-Nginx and PHP FPM for running PHP applications
+Nginx and PHP FPM for running PHP applications.
 
 ## k8 at home search
 

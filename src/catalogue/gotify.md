@@ -2,7 +2,7 @@
 
 ## Description
 
-A simple server for sending and receiving messages
+A simple server for sending and receiving messages.
 
 ## k8 at home search
 

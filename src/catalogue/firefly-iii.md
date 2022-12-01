@@ -2,7 +2,7 @@
 
 ## Description
 
-Firefly III: a personal finances manager
+Firefly III: a personal finances manager.
 
 ## k8 at home search
 

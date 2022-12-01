@@ -2,7 +2,7 @@
 
 ## Description
 
-openhab helm package
+openhab helm package.
 
 ## k8 at home search
 

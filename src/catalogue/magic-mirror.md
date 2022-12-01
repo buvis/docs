@@ -2,7 +2,7 @@
 
 ## Description
 
-magic-mirror helm package
+magic-mirror helm package.
 
 ## k8 at home search
 

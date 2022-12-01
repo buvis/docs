@@ -2,7 +2,7 @@
 
 ## Description
 
-Smart PVR for newsgroup and bittorrent users
+Smart PVR for newsgroup and bittorrent users.
 
 ## k8 at home search
 

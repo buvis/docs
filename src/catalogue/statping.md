@@ -2,7 +2,7 @@
 
 ## Description
 
-Status page for monitoring your websites and applications
+Status page for monitoring your websites and applications.
 
 ## k8 at home search
 

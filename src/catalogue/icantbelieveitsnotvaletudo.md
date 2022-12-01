@@ -2,7 +2,7 @@
 
 ## Description
 
-Create live map data from Valetudo powered robots
+Create live map data from Valetudo powered robots.
 
 ## k8 at home search
 

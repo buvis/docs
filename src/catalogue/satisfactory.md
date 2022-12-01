@@ -2,7 +2,7 @@
 
 ## Description
 
-Satisfactory dedicated server
+Satisfactory dedicated server.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-DNS proxy as ad-blocker for local network
+DNS proxy as ad-blocker for local network.
 
 ## k8 at home search
 

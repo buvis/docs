@@ -2,7 +2,7 @@
 
 ## Description
 
-mopidy helm package
+mopidy helm package.
 
 ## k8 at home search
 

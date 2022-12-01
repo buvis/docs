@@ -2,7 +2,7 @@
 
 ## Description
 
-Flood is a monitoring service for various torrent clients
+Flood is a monitoring service for various torrent clients.
 
 ## k8 at home search
 

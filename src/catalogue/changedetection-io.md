@@ -2,7 +2,7 @@
 
 ## Description
 
-changedetection-io helm package
+changedetection-io helm package.
 
 ## k8 at home search
 

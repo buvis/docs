@@ -2,7 +2,7 @@
 
 ## Description
 
-multus CNI allows multiple NICs per pod
+multus CNI allows multiple NICs per pod.
 
 ## k8 at home search
 

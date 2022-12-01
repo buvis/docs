@@ -2,7 +2,7 @@
 
 ## Description
 
-A self-hosted and PHP-based URL shortener application with CLI and REST interfaces
+A self-hosted and PHP-based URL shortener application with CLI and REST interfaces.
 
 ## k8 at home search
 

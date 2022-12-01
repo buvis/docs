@@ -2,7 +2,7 @@
 
 ## Description
 
-Discord bot that provides metrics from a Discord server
+Discord bot that provides metrics from a Discord server.
 
 ## k8 at home search
 

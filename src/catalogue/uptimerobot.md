@@ -2,7 +2,7 @@
 
 ## Description
 
-A tool to get statistics from Uptime Robot and log it into InfluxDB
+A tool to get statistics from Uptime Robot and log it into InfluxDB.
 
 ## k8 at home search
 

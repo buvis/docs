@@ -2,7 +2,7 @@
 
 ## Description
 
-A Helm chart for deploying LazyLibrarian
+A Helm chart for deploying LazyLibrarian.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-OpenTelemetry collector helm package
+OpenTelemetry collector helm package.
 
 ## k8 at home search
 

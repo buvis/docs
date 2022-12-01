@@ -2,7 +2,7 @@
 
 ## Description
 
-Fast, modern, secure VPN tunnel
+Fast, modern, secure VPN tunnel.
 
 ## k8 at home search
 

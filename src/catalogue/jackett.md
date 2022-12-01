@@ -2,7 +2,7 @@
 
 ## Description
 
-API Support for your favorite torrent trackers
+API Support for your favorite torrent trackers.
 
 ## k8 at home search
 

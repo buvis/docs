@@ -2,7 +2,7 @@
 
 ## Description
 
-seafile helm package
+seafile helm package.
 
 ## k8 at home search
 

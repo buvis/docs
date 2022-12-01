@@ -2,7 +2,7 @@
 
 ## Description
 
-Vaultwarden is a Bitwarden compatable server in Rust
+Vaultwarden is a Bitwarden compatable server in Rust.
 
 ## k8 at home search
 

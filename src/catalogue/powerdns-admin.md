@@ -2,7 +2,7 @@
 
 ## Description
 
-A PowerDNS web interface with advanced features
+A PowerDNS web interface with advanced features.
 
 ## k8 at home search
 

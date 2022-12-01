@@ -2,7 +2,7 @@
 
 ## Description
 
-pretend-youre-xyzzy, a cards against humanity clone
+pretend-youre-xyzzy, a cards against humanity clone.
 
 ## k8 at home search
 

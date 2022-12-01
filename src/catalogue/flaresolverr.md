@@ -2,7 +2,7 @@
 
 ## Description
 
-FlareSolverr is a proxy server to bypass Cloudflare protection
+FlareSolverr is a proxy server to bypass Cloudflare protection.
 
 ## k8 at home search
 

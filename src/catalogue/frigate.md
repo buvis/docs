@@ -2,7 +2,7 @@
 
 ## Description
 
-NVR With Realtime Object Detection for IP Cameras
+NVR With Realtime Object Detection for IP Cameras.
 
 ## k8 at home search
 

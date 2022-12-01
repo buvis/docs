@@ -2,7 +2,7 @@
 
 ## Description
 
-Open-source online collaborative genealogy application
+Open-source online collaborative genealogy application.
 
 ## k8 at home search
 

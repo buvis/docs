@@ -2,7 +2,7 @@
 
 ## Description
 
-Make documentation a joy to write using Wiki.js's beautiful and intuitive interface!
+Make documentation a joy to write using Wiki.js's beautiful and intuitive interface!.
 
 ## k8 at home search
 

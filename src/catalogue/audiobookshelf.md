@@ -2,7 +2,7 @@
 
 ## Description
 
-Self-hosted audiobook server for managing and playing your audiobooks
+Self-hosted audiobook server for managing and playing your audiobooks.
 
 ## k8 at home search
 

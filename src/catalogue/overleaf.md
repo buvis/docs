@@ -2,7 +2,7 @@
 
 ## Description
 
-A web-based collaborative LaTeX editor
+A web-based collaborative LaTeX editor.
 
 ## k8 at home search
 

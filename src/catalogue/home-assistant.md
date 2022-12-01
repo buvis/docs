@@ -2,7 +2,7 @@
 
 ## Description
 
-Home Assistant
+Home Assistant.
 
 ## k8 at home search
 

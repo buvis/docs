@@ -2,7 +2,7 @@
 
 ## Description
 
-Bot for Prometheus Alertmanager
+Bot for Prometheus Alertmanager.
 
 ## k8 at home search
 

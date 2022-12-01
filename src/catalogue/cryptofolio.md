@@ -2,7 +2,7 @@
 
 ## Description
 
-Track your cryptocurrency holdings/portfolio
+Track your cryptocurrency holdings/portfolio.
 
 ## k8 at home search
 

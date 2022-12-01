@@ -2,7 +2,7 @@
 
 ## Description
 
-An easy-to-deploy Dockerized Foundry Virtual Tabletop server
+An easy-to-deploy Dockerized Foundry Virtual Tabletop server.
 
 ## k8 at home search
 

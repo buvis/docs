@@ -2,7 +2,7 @@
 
 ## Description
 
-Serial to Socket Redirector
+Serial to Socket Redirector.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Free and easy binary newsreader
+Free and easy binary newsreader.
 
 ## k8 at home search
 

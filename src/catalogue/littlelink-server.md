@@ -2,7 +2,7 @@
 
 ## Description
 
-A lightweight open source alternative to linktree
+A lightweight open source alternative to linktree.
 
 ## k8 at home search
 

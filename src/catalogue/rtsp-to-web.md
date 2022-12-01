@@ -2,7 +2,7 @@
 
 ## Description
 
-RTSPtoWeb converts RTSP streams to WebRTC, LL-HLS, HLS, MSE
+RTSPtoWeb converts RTSP streams to WebRTC, LL-HLS, HLS, MSE.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Anonaddy: Anonymous email forwarding
+Anonaddy: Anonymous email forwarding.
 
 ## k8 at home search
 

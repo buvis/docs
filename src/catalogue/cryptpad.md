@@ -2,7 +2,7 @@
 
 ## Description
 
-cryptpad helm package
+cryptpad helm package.
 
 ## k8 at home search
 

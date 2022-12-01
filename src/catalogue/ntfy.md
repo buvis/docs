@@ -2,7 +2,7 @@
 
 ## Description
 
-Send push notifications to your phone or desktop using PUT/POST
+Send push notifications to your phone or desktop using PUT/POST.
 
 ## k8 at home search
 

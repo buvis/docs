@@ -2,7 +2,7 @@
 
 ## Description
 
-nightscout helm package
+nightscout helm package.
 
 ## k8 at home search
 

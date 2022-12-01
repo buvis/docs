@@ -2,7 +2,7 @@
 
 ## Description
 
-Dockerized Signal Messenger REST API
+Dockerized Signal Messenger REST API.
 
 ## k8 at home search
 

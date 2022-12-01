@@ -2,7 +2,7 @@
 
 ## Description
 
-Index and stream music using apache-musicindex and m3u playlists
+Index and stream music using apache-musicindex and m3u playlists.
 
 ## k8 at home search
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-TeamSpeak Server
+TeamSpeak Server.
 
 ## k8 at home search
 

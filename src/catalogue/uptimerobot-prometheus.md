@@ -2,7 +2,7 @@
 
 ## Description
 
-Prometheus Exporter for the official uptimerobot CLI
+Prometheus Exporter for the official uptimerobot CLI.
 
 ## k8 at home search
 

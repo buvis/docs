@@ -2,7 +2,7 @@
 
 ## Description
 
-Ubiquiti Network's Unifi Controller
+Ubiquiti Network's Unifi Controller.
 
 ## k8 at home search
 

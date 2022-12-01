@@ -2,7 +2,7 @@
 
 ## Description
 
-Dendrite Matrix Homeserver
+Dendrite Matrix Homeserver.
 
 ## k8 at home search
 
