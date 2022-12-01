@@ -7,3 +7,7 @@ A monitoring system which checks the availability of your network resources, not
 ## k8 at home search
 
 - [icinga2](https://nanne.dev/k8s-at-home-search/#/icinga2)
+
+## Charts
+
+

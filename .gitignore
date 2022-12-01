@@ -2,4 +2,4 @@ __pycache__
 .direnv
 .DS_Store
 geckodriver.log
-Thumbs.db
+*.db

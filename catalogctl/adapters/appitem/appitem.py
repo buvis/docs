@@ -16,6 +16,7 @@ class AppItemAdapter:
 
     def scrape(self, scraper):
         self.url_k8sathome_search = K8SATHOME_SEARCH_URL + self.name
+        self.helm_charts = scraper.get_helm_charts(self.name)
         self.description = scraper.get_description(self.name)
 
     def read(self):
@@ -32,6 +33,10 @@ class AppItemAdapter:
         pass
 
     def _render_markdown(self):
+        charts = ""
+
+        for chart in self.helm_charts:
+            charts = charts + f"- [{chart[0]}@{chart[1]}]({chart[2]})\n"
         markdown = f"""# {self.nice_name}
 
 ## Description
@@ -41,6 +46,10 @@ class AppItemAdapter:
 ## k8 at home search
 
 - [{self.name}]({self.url_k8sathome_search})
+
+## Charts
+
+{charts.strip()}
 """
 
         return markdown

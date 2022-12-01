@@ -7,3 +7,7 @@ Gaps searches through your Plex Server or local folders for all movies, then que
 ## k8 at home search
 
 - [gaps](https://nanne.dev/k8s-at-home-search/#/gaps)
+
+## Charts
+
+- [app-template@bjw-s-charts](https://bjw-s.github.io/helm-charts/)

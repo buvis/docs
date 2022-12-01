@@ -7,3 +7,7 @@ A buddy for babies! Helps caregivers track sleep, feedings, diaper changes, tumm
 ## k8 at home search
 
 - [babybuddy](https://nanne.dev/k8s-at-home-search/#/babybuddy)
+
+## Charts
+
+- [app-template@bjw-s](https://bjw-s.github.io/helm-charts/)

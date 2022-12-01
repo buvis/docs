@@ -7,8 +7,8 @@ class ScraperAdapter:
         self.kah_charts = KaHChartsAdapter()
         self.kah_search = KaHSearchAdapter()
 
-    def get_helm_releases(self, app_name):
-        pass
+    def get_helm_charts(self, app_name):
+        return self.kah_search.get_helm_charts(app_name)
 
     def get_description(self, app_name):
         kah_charts_description = self.kah_charts.get_app_description(app_name)

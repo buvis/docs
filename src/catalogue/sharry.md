@@ -7,3 +7,7 @@ Sharry allows to share files with others in a simple way. It is a self-hosted we
 ## k8 at home search
 
 - [sharry](https://nanne.dev/k8s-at-home-search/#/sharry)
+
+## Charts
+
+- [app-template@bjw-s](https://bjw-s.github.io/helm-charts/)

@@ -6,6 +6,7 @@ class CommandDiscover:
 
     def __init__(self):
         self.kah_search = KaHSearchAdapter()
+        self.kah_search.fetch_database()
         self.kah_charts = KaHChartsAdapter()
         self.applist = AppListAdapter()
 

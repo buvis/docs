@@ -7,3 +7,7 @@ syslog-ng allows you to flexibly collect, parse, classify, rewrite and correlate
 ## k8 at home search
 
 - [syslog-ng](https://nanne.dev/k8s-at-home-search/#/syslog-ng)
+
+## Charts
+
+

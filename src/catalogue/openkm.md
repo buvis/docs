@@ -7,3 +7,7 @@ OpenKM integrates all essential documents management, collaboration and an advan
 ## k8 at home search
 
 - [openkm](https://nanne.dev/k8s-at-home-search/#/openkm)
+
+## Charts
+
+

@@ -1,0 +1,13 @@
+# Nginx Ingress External
+
+## Description
+
+No description provided.
+
+## k8 at home search
+
+- [nginx-ingress-external](https://nanne.dev/k8s-at-home-search/#/nginx-ingress-external)
+
+## Charts
+
+- [nginx-ingress-controller@bitnami-charts](https://charts.bitnami.com/bitnami/)

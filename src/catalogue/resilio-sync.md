@@ -7,3 +7,7 @@ Resilio Sync is a fast, reliable, and simple file sync and share solution, power
 ## k8 at home search
 
 - [resilio-sync](https://nanne.dev/k8s-at-home-search/#/resilio-sync)
+
+## Charts
+
+

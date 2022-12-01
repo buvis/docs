@@ -7,3 +7,7 @@ Take control over your live stream video by running it yourself. Streaming + cha
 ## k8 at home search
 
 - [owncast](https://nanne.dev/k8s-at-home-search/#/owncast)
+
+## Charts
+
+- [app-template@bjw-s-charts](https://bjw-s.github.io/helm-charts/)

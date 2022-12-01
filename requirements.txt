@@ -3,4 +3,5 @@ click
 requests
 rich
 selenium
+sqlalchemy
 webdriver-manager
