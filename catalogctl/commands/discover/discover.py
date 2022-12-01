@@ -1,19 +1,19 @@
-from adapters import (AppListAdapter, console, k8sathomechartsAdapter,
-                      k8sathomesearchAdapter)
+from adapters import (AppListAdapter, KaHChartsAdapter, KaHSearchAdapter,
+                      console)
 
 
 class CommandDiscover:
 
     def __init__(self):
-        self.search = k8sathomesearchAdapter()
-        self.k8sathomecharts = k8sathomechartsAdapter()
+        self.kah_search = KaHSearchAdapter()
+        self.kah_charts = KaHChartsAdapter()
         self.applist = AppListAdapter()
 
     def execute(self):
-        app_names_search = self.search.list_all_apps()
-        app_names_k8sathomecharts = self.k8sathomecharts.list_all_apps()
+        app_names_search = self.kah_search.list_all_apps()
+        app_names_kah_charts = self.kah_charts.list_all_apps()
         app_names_applist = self.applist.list_all_apps()
-        app_names = app_names_search + app_names_k8sathomecharts + app_names_applist
+        app_names = app_names_search + app_names_kah_charts + app_names_applist
         app_names_unique = list(set(app_names))
         app_names_unique.sort()
         self.applist.save(app_names_unique)

@@ -13,7 +13,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 URL_ALL_APPS = "https://nanne.dev/k8s-at-home-search/#/"
 
 
-class k8sathomesearchAdapter:
+class KaHSearchAdapter:
 
     def __init__(self):
         options = Options()

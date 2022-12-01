@@ -1,12 +1,13 @@
-from adapters import k8sathomechartsAdapter
+from adapters import KaHChartsAdapter, KaHSearchAdapter
 
 
 class ScraperAdapter:
 
     def __init__(self):
-        self.kah_charts = k8sathomechartsAdapter()
+        self.kah_charts = KaHChartsAdapter()
+        self.kah_search = KaHSearchAdapter()
 
-    def get_helm_releases(self):
+    def get_helm_releases(self, app_name):
         pass
 
     def get_description(self, app_name):

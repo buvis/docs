@@ -7,7 +7,7 @@ URL_README = (
 )
 
 
-class k8sathomechartsAdapter:
+class KaHChartsAdapter:
 
     def __init__(self):
         self.apps = []
