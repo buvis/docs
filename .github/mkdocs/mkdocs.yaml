@@ -84,3 +84,4 @@ nav:
   - smarthome: namespaces/smarthome.md
   - system-upgrade: namespaces/system-upgrade.md
   - vpn: namespaces/vpn.md
+- Catalogue: index.md

@@ -1,6 +1,8 @@
 from pathlib import Path
 
-APP_LIST_PATH = Path("src/catalogue/app-list").absolute()
+CATALOGUE_DIR = Path("src/catalogue").absolute()
+APP_LIST_PATH = Path.joinpath(CATALOGUE_DIR, "app-list").absolute()
+INDEX_PATH = Path.joinpath(CATALOGUE_DIR, "index.md").absolute()
 
 
 class AppListAdapter:
@@ -18,3 +20,18 @@ class AppListAdapter:
         with open(APP_LIST_PATH, "w+") as app_list:
             for app in app_names:
                 app_list.write(app + "\n")
+
+    def build_index(self):
+        markdown = """# Catalogue
+
+Here I maintain the information about applications I run or could run in my clusters.
+
+## Sorted by name
+
+"""
+
+        for app in self.apps:
+            markdown = markdown + f"- [{app}]({app})\n"
+
+        with open(INDEX_PATH, "w+") as app_index:
+            app_index.writelines(markdown)
