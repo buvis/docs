@@ -14,13 +14,14 @@ When Calico releases a new version of `tigera-operator`:
 
 ### Talos
 
-When siderolabs release a new Talos version:
+When siderolabs release a new Talos version (`<VERSION_TAG>`):
 
 1. Update the client (`talosctl`)
     a. Download amd64 binary: `curl -Lo /usr/local/bin/talosctl https://github.com/siderolabs/talos/releases/download/<VERSION_TAG>/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
     b. Make it executable: `chmod +x /usr/local/bin/talosctl`
-2. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:<VERSION_TAG> --preserve`
-3. Check version: `talosctl version`
+2. Update all machine configs to latest `iscsi-tools` version from https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools at `.machine.install.extensions`
+3. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:<VERSION_TAG> --preserve`
+4. Check version: `talosctl version`
 
 ## Recreate
 
