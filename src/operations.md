@@ -2,11 +2,25 @@
 
 ### Flux
 
-This is automated using [Github Action](https://github.com/buvis/clusters/blob/main/.github/workflows/update-flux-home.yaml).
+This is automated using [Github Action](https://github.com/buvis/clusters/blob/main/.github/workflows/update-flux-home.yaml). Sometimes the Flux components may fail to start due to outdated CRDs. In that case, make sure you are on the latest Flux CLI (`brew upgrade flux`) and run `buvisctl update flux`.
 
-### Nodes
+### Calico
 
-TODO: I switched to Talos, so I have to figure this out
+When Calico releases a new version of `tigera-operator`:
+
+1. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/<VERSION_TAG>/manifests/tigera-operator.yaml -O`
+2. Initiate the upgrade: `kubectl apply -f tigera-operator.yaml`
+3. Remove the manifest: `rm tigera-operator.yaml`
+
+### Talos
+
+When siderolabs release a new Talos version:
+
+1. Update the client (`talosctl`)
+    a. Download amd64 binary: `curl -Lo /usr/local/bin/talosctl https://github.com/siderolabs/talos/releases/download/<VERSION_TAG>/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
+    b. Make it executable: `chmod +x /usr/local/bin/talosctl`
+2. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:<VERSION_TAG> --preserve`
+3. Check version: `talosctl version`
 
 ## Recreate
 
