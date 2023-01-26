@@ -1,4 +1,4 @@
-## Upgrade
+## Update
 
 ### Flux
 
@@ -8,20 +8,29 @@ This is automated using [Github Action](https://github.com/buvis/clusters/blob/m
 
 When Calico releases a new version of `tigera-operator`:
 
-1. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/<VERSION_TAG>/manifests/tigera-operator.yaml -O`
-2. Initiate the upgrade: `kubectl apply -f tigera-operator.yaml`
-3. Remove the manifest: `rm tigera-operator.yaml`
+1. Determine `<VERSION_TAG>`: [Calico Releases | GitHub](https://github.com/projectcalico/calico/releases)
+2. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/<VERSION_TAG>/manifests/tigera-operator.yaml -O`
+3. Initiate the upgrade: `kubectl apply -f tigera-operator.yaml`
+4. Remove the manifest: `rm tigera-operator.yaml`
 
 ### Talos
 
 When siderolabs release a new Talos version (`<VERSION_TAG>`):
 
-1. Update the client (`talosctl`)
-    a. Download amd64 binary: `curl -Lo /usr/local/bin/talosctl https://github.com/siderolabs/talos/releases/download/<VERSION_TAG>/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
+1. Check for new issues to see if the new version is safe to use
+2. Set temporary variable to use in following commands: `TALOS_VERSION=<VERSION_TAG>`
+3. Update the client (`talosctl`)
+    a. Download amd64 binary: `curl -Lo /usr/local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
     b. Make it executable: `chmod +x /usr/local/bin/talosctl`
-2. Update all machine configs to latest `iscsi-tools` version from https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools at `.machine.install.extensions`
-3. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:<VERSION_TAG> --preserve`
-4. Check version: `talosctl version`
+4. Update all machine configs to latest `iscsi-tools` version from https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools at `.machine.install.extensions`: `talosctl -n <NODE_IP> edit machineconfig --mode=no-reboot`
+5. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:$TALOS_VERSION --preserve`
+6. Check nodes version: `talosctl --nodes <COMMA_SEPARATED_LIST_OF_NODE_IPS> version`
+
+### Proxmox
+
+1. Connect to Proxmox node: `ssh <NODE_NAME>`
+2. Update packages: `apt update && apt dist-upgrade`
+3. Reboot: `reboot`
 
 ## Recreate
 
@@ -40,11 +49,29 @@ Run `buvisctl destroy` in cluster's directory.
 ### Bootstrap
 
 1. Set workstation's DNS to 1.1.1.1, because Blocky isn't running
-2. Run `buvisctl bootstrap` in cluster's directory.
+2. Update VM template:
+    a. Connect to Proxmox node: `ssh <NODE_NAME>`
+    b. Remove old Talos image: `rm talos-amd64.iso`
+    c. Destroy the old VM template: `qm destroy 9000`
+    d. Create new VM template by repeating [installation - Create VM template](installation.md#create-vm-template)
+3. Make sure that GitHub PAT (stored in GITHUB_TOKEN environment variable) is still valid, and update it eventually
+4. Run `buvisctl bootstrap` in cluster's directory.
 
 ### Restore
 
-Repeat for every PVC: `buvisctl backup -n <NAMESPACE> <PVC>`
+Repeat for every PVC: `buvisctl restore -n <NAMESPACE> <PVC>`. The list of available snapshots can be retrieved from [Kopia UI](http://10.11.0.44/snapshots).
+
+#### MariaDB
+
+After restore, pods running MariaDB won't start and report that "Access denied for user 'root'@'localhost'" in the log. This is because credentials were generated when cluster bootstrapped.
+1. Delete *mariadb* Secret for this database
+2. Delete MariaDB helm release: `flux delete hr -n <NAMESPACE> <DB_RELEASE>`
+3. Scale down the application using this database to zero replicas
+4. Reconcile Flux: `flux reconcile ks flux-system --with-source`
+5. Scale up the application using this database back to desired replicas count
+6. You may need to restart the database pod and the application again (this is usually the case of Linkace)
+
+When started for the first time, a secret is created with database user passwords. You need to remove that secret after restoring database data. Then delete
 
 
 ## Usage
