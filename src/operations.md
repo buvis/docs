@@ -29,7 +29,7 @@ When siderolabs release a new Talos version (`<VERSION_TAG>`):
 ### Proxmox
 
 1. Connect to Proxmox node: `ssh <NODE_NAME>`
-2. Update packages: `apt update && apt dist-upgrade`
+2. Update packages: `apt update && apt dist-upgrade && apt autoremove`
 3. Reboot: `reboot`
 
 ## Recreate
