@@ -24,7 +24,7 @@ When siderolabs release a new Talos version (`<VERSION_TAG>`):
     b. Make it executable: `chmod +x /usr/local/bin/talosctl`
 4. Update all machine configs to latest `iscsi-tools` version from https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools at `.machine.install.extensions`: `talosctl -n <NODE_IP> edit machineconfig --mode=no-reboot`
 5. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:$TALOS_VERSION --preserve`
-6. Check nodes version: `talosctl --nodes <COMMA_SEPARATED_LIST_OF_NODE_IPS> version`
+6. Check nodes version: `talosctl --nodes $NODE_IPS version`
 
 ### Proxmox
 
