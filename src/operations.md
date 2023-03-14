@@ -12,6 +12,8 @@ When Calico releases a new version of `tigera-operator`:
 2. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/<VERSION_TAG>/manifests/tigera-operator.yaml -O`
 3. Initiate the upgrade: `kubectl apply -f tigera-operator.yaml`
 4. Remove the manifest: `rm tigera-operator.yaml`
+5. Update Talos installation patch: `vim infrastructure/talos/patch-all.yaml` and update `<VERSION_TAG>` in `/cluster/network/cni/custom/urls`
+6. Update machineconfig: `talosctl -n $NODE_IPS edit machineconfig --mode=no-reboot` and update `<VERSION_TAG>` in `/cluster/network/cni/custom/urls`
 
 ### Talos
 
@@ -22,9 +24,9 @@ When siderolabs release a new Talos version (`<VERSION_TAG>`):
 3. Update the client (`talosctl`)
     a. Download amd64 binary: `curl -Lo /usr/local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
     b. Make it executable: `chmod +x /usr/local/bin/talosctl`
-4. Update all machine configs to latest `iscsi-tools` version from https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools at `.machine.install.extensions`: `talosctl -n <NODE_IP> edit machineconfig --mode=no-reboot`
+4. Update all machine configs to latest `iscsi-tools` version from https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools at `.machine.install.extensions`: `talosctl -n $NODE_IPS edit machineconfig --mode=no-reboot`
 5. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:$TALOS_VERSION --preserve`
-6. Check nodes version: `talosctl --nodes $NODE_IPS version`
+6. Check nodes version: `talosctl -n $NODE_IPS version`
 
 ### Proxmox
 
