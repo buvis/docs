@@ -18,7 +18,7 @@ When Calico releases a new version of `tigera-operator`:
 
 ### Talos
 
-When siderolabs release a new Talos version (`<VERSION_TAG>`):
+When siderolabs release a [new Talos version](https://github.com/siderolabs/talos/releases/latest) (`<VERSION_TAG>`):
 
 1. Check for new [issues](https://github.com/siderolabs/talos/issues) to see if the new version is safe to use
 2. Set temporary variable to use in following commands: `TALOS_VERSION=<VERSION_TAG>`
