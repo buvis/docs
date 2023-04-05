@@ -147,9 +147,8 @@ dependsOn:
 
 This is rather brutal solution, but it works. I will improve it if I find a better way.
 
-1. Get node name where Jiva volume is mounted: `kubectl get jivavolume -n storage -o 'jsonpath={.metadata.labels.nodeID}' <PVC_NAME>`
-2. Get node IP: `kubectl get node -o 'jsonpath={.status.addresses[?(@.type=="InternalIP")].address}' <NODE_NAME>`
-3. Restart node: `talosctl reboot -n <NODE_IP>`
+1. Get `<NODE_IP>` of node running `<PVC_NAME>`: `PVC=<PVC_NAME> ; echo PVC $PVC runs at $(kubectl get node -o 'jsonpath={.status.addresses[?(@.type=="InternalIP")].address}' $(kubectl get jivavolumes -n storage -l openebs.io/persistent-volume-claim=$PVC -o 'jsonpath={.items[0].metadata.labels.nodeID}'))`
+2. Reboot the node: `talosctl reboot -n <NODE_IP>`
 
 ### Flux can't reconcile a helmrelease
 - Get status of all helmreleases
