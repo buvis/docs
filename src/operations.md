@@ -23,8 +23,8 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
 1. Check for new [issues](https://github.com/siderolabs/talos/issues) to see if the new version is safe to use
 2. Set temporary variable to use in following commands: `TALOS_VERSION=<VERSION_TAG>`
 3. Update the client (`talosctl`)
-  a. Download amd64 binary: `curl -Lo /usr/local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
-  b. Make it executable: `chmod +x /usr/local/bin/talosctl`
+    a. Download amd64 binary: `curl -Lo ~/.local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
+    b. Make it executable: `chmod +x ~/.local/bin/talosctl`
 4. Update all machineconfigs to `iscsi-tools` [latest version](https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools) at `.machine.install.extensions`: `talosctl -n $NODE_IPS edit machineconfig --mode=no-reboot`
 5. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:$TALOS_VERSION --preserve`
 6. Check nodes version: `talosctl -n $NODE_IPS version`
@@ -49,6 +49,17 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
 
 Run `buvisctl destroy` in cluster's directory.
 
+### Disable monitoring
+
+First reconciliation by Flux will fail for multiple reasons. Avoid this by changing some manifests temporarily:
+
+TODO CRDs should be installed first, however I need to find out how to keep them updated
+
+1. Disable ServiceMonitor for cert-manager: set `.spec.values.prometheus.servicemonitor.enabled=false` in `operations/kube-tools/cert-manager/helmrelease.yaml`
+2. Disable ServiceMonitor for kyverno: set `.spec.values.*.serviceMonitor.enabled=false` in `operations/kube-tools/kyverno/helmrelease.yaml`
+3. Disable ServiceMonitor for ingress-nginx: set `.spec.values.controller.metrics.serviceMonitor.enabled=false` in `operations/kube-tools/ingress-nginx/helmrelease.yaml`
+4. Disable ServiceMonitor for authentik: set `.spec.values.*.serviceMonitor.enabled=false` in `operations/security/authentik/helmrelease.yaml`
+
 ### Bootstrap
 
 1. Set workstation's DNS to 1.1.1.1, because Blocky isn't running
@@ -59,14 +70,17 @@ Run `buvisctl destroy` in cluster's directory.
     d. Create new VM template by repeating [installation - Create VM template](installation.md#create-vm-template)
 3. Make sure that GitHub PAT (stored in GITHUB_TOKEN environment variable) is still valid, and update it eventually
 4. Run `buvisctl bootstrap` in cluster's directory.
+5. Fix all Flux reconciliation errors
+6. Enable monitoring by reversing the changes from [Disable monitoring chapter](operations.md#disable-monitoring)
 
 ### Restore
 
-Repeat for every PVC: `buvisctl restore -n <NAMESPACE> <PVC>`. The list of available snapshots can be retrieved from [Kopia UI](http://10.11.0.44/snapshots).
+Run `./operations/storage/kopia/scripts/restore-pvcs.sh` in cluster's directory.
 
 #### MariaDB
 
 After restore, pods running MariaDB won't start and report that "Access denied for user 'root'@'localhost'" in the log. This is because credentials were generated when cluster bootstrapped.
+
 1. Delete *mariadb* Secret for this database
 2. Delete MariaDB helm release: `flux delete hr -n <NAMESPACE> <DB_RELEASE>`
 3. Scale down the application using this database to zero replicas
@@ -80,6 +94,7 @@ When started for the first time, a secret is created with database user password
 ## Usage
 
 ### Use secret values in manifests directly
+
 1. Define key-value pair in [cluster-secrets](https://github.com/buvis/clusters/blob/main/production/operations/flux-system/extras/cluster-secrets.yaml)
     ```bash
     sops flux-system/extras/cluster-secrets.yaml
@@ -90,6 +105,7 @@ When started for the first time, a secret is created with database user password
     ```
 
 ### Use secret values in manifests from a file
+
 1. Create `secret.yaml`
     ```yaml
     ---
@@ -116,6 +132,7 @@ When started for the first time, a secret is created with database user password
     ```
 
 ### Wait for another helm release (dependency)
+
 Some releases depend on others. You may get errors when reconciling such releases too early.
 
 Flux will reconcile something only once something else it depends on is available when **dependsOn** is mentionned in helm release manifest. It can refer to a name of another helm release across all namespaces.
@@ -151,6 +168,7 @@ This is rather brutal solution, but it works. I will improve it if I find a bett
 2. Reboot the node: `talosctl reboot -n <NODE_IP>`
 
 ### Flux can't reconcile a helmrelease
+
 - Get status of all helmreleases
     ```bash
     flux get helmreleases --all-namespaces

@@ -36,3 +36,9 @@ This hosts media related applications.
     - server: 127.0.0.1
     - extensions: <empty>
     - log: false
+
+### Backup
+
+1. Go to tdarr web
+2. Backups - Create backup
+3. Copy backups to your laptop: `POD_NAME=$(kubectl get pods -l=app.kubernetes.io/name=tdarr -n media -o=jsonpath='{range .items..metadata}{.name}{"\n"}{end}'); kubectl cp media/$POD_NAME:/app/server/Tdarr/Backups ~/Downloads/tdarr-backups`

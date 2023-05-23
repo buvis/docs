@@ -65,10 +65,10 @@ Reference:
 ### Backup to sql
 
 1. When you use Settings - Export data - Export to SQL it will probably fail
-2. Copy exports directory from `<monica-pod>`: `kubectl cp gtd/<monica-pod>:/var/www/html/storage/app/public/exports ~/Downloads/monica/`
+2. Copy exports directory from Monica: `POD_NAME=$(kubectl get pods -l=app.kubernetes.io/name=monica -n gtd -o=jsonpath='{range .items..metadata}{.name}{"\n"}{end}'); kubectl cp gtd/$POD_NAME:/var/www/html/storage/app/public/exports ~/Downloads/monica`
 
 Reference:
-- https://github.com/monicahq/monica/issues/5937#issuecomment-1084913591
+- [Monica issue 5937](https://github.com/monicahq/monica/issues/5937#issuecomment-1084913591)
 
 ### Restore from sql
 
