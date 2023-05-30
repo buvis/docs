@@ -69,7 +69,10 @@ markdown_extensions:
 nav:
 - Overview: index.md
 - Installation: installation.md
-- Operations: operations.md
+- Update: update.md
+- Recreate: recreate.md
+- GitOps: gitops.md
+- Troubleshooting: troubleshooting.md
 - Namespaces:
   - flux-system: namespaces/flux-system.md
   - gtd: namespaces/gtd.md
