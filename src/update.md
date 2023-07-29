@@ -19,7 +19,7 @@ When Calico releases a new version of `tigera-operator`:
 When siderolabs release a [new Talos version](https://github.com/siderolabs/talos/releases/latest) (`<VERSION_TAG>`):
 
 1. Check for new [issues](https://github.com/siderolabs/talos/issues) to see if the new version is safe to use
-2. Set temporary variable to use in following commands: `TALOS_VERSION=<VERSION_TAG>`
+2. Set temporary variable to use in following commands: `export TALOS_VERSION=<VERSION_TAG>`
 3. Update the client (`talosctl`)
     a. Download amd64 binary: `curl -Lo ~/.local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
     b. Make it executable: `chmod +x ~/.local/bin/talosctl`
