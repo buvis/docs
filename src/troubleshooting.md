@@ -2,7 +2,7 @@
 
 This is rather brutal solution, but it works. I will improve it if I find a better way.
 
-1. Get `<NODE_IP>` of node running JivaVolume for PVC: `read -p "Enter PVC name: " PVC ; echo PVC $PVC runs at $(kubectl get node -o 'jsonpath={.status.addresses[?(@.type=="InternalIP")].address}' $(kubectl get jivavolumes -n storage -l openebs.io/persistent-volume-claim=$PVC -o 'jsonpath={.items[0].metadata.labels.nodeID}'))`
+1. Get `<NODE_IP>` of node running JivaVolume for PVC: `get-pvc-node` and then enter PVC name
 2. Reboot the node: `talosctl reboot -n <NODE_IP>`
 
 ## Flux can't reconcile a helmrelease
