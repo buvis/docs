@@ -57,3 +57,66 @@ If an application uses basic authentication, then it is possible to let Authenti
 7. Check `Send HTTP-Basic Authentication` checkbox
 8. HTTP-Basic Username Key: `<appname>_username`
 8. HTTP-Basic Password Key: `<appname>_password`
+
+### Upgrade database
+
+When upgrading authnetik, it may fail to start and report "FATAL:  database files are incompatible with server" error message. You need to migrate the database to higher version.
+
+1. Downgrade authentik to previous version in its helmrelease
+2. Delete `authentik-postgresql` StatefulSet
+3. Force flux reconciliation: `flux reconcile ks flux-system --with-source`
+4. Restart authentik release: `flux suspend hr -n security authentik && flux resume hr -n security authentik`
+5. Stop authentik: `kubectl scale deploy --replicas 0 -n security authentik-server && kubectl scale deploy --replicas 0 -n security authentik-worker`
+6. Dump the database: `kubectl exec -it authentik-postgresql-0 -n security -- env PGPASSWORD="<postgresql-postgres-password from authentik-postgresl secret>" /opt/bitnami/postgresql/bin/pg_dump -U postgres authentik > authentik-db-dumpfile`
+7. Upgrade postgres: add this to authentik's `helmrelease.yaml`
+```
+postgresql:
+  diagnosticMode:
+    enabled: true
+  image:
+    tag: <NEWEST_TAG_FROM_HELM_CHART>
+```
+8. Force flux reconciliation: `flux reconcile ks flux-system --with-source`
+9. Stop authentik: `kubectl scale deploy --replicas 0 -n security authentik-server && kubectl scale deploy --replicas 0 -n security authentik-worker`
+10. Get a shell in authentik's postgres database pod: `kubectl exec -it authentik-postgresql-0 -n security -- bash`
+11. Remove the old data: `cd /bitnami/postgresql/ && mv data data-11`
+12. Restart authentik's postgres database by removing `diagnosticMode` from authentik's `helmrelease.yaml`
+13. Force flux reconciliation: `flux reconcile ks flux-system --with-source`
+14. Stop authentik: `kubectl scale deploy --replicas 0 -n security authentik-server && kubectl scale deploy --replicas 0 -n security authentik-worker`
+15. Import the database: `kubectl exec -it authentik-postgresql-0 -n security -- env PGPASSWORD="<postgresql-postgres-password from authentik-postgresl secret>" psql -U postgres authentik < authentik-db-dumpfile`
+16. Force flux reconciliation: `flux reconcile ks flux-system --with-source`
+17. Restart authentik release: `flux suspend hr -n security authentik && flux resume hr -n security authentik`
+18. Check that authentik works fine with the upgraded database
+19. Remove `authentik-db-dumpfile`
+20. Get a shell in authentik's postgres database pod: `kubectl exec -it authentik-postgresql-0 -n security -- bash`
+21. Remove the old data: `cd /bitnami/postgresql/ && rm -rf data-11`
+22. Remove `postgresql.image` from authentik's `helmrelease.yaml` and upgrade to latest helm chart version
+
+### Set postgres user password
+
+1. Shell to authentik-postgresql-0 pod: `kubectl exec -it authentik-postgresql-0 -n security -- bash`
+2. Allow passwordless connection:
+```bash
+cat > /opt/bitnami/postgresql/conf/pg_hba.conf << EOF
+host     all             all             0.0.0.0/0               trust
+host     all             all             ::/0                    trust
+local    all             all                                     trust
+host     all             all        127.0.0.1/32                 trust
+host     all             all        ::1/128                      trust
+EOF
+```
+3. Reload postgresql config: `pg_ctl reload -D /bitnami/postgresql/data/`
+4. Connect to dabase: `psql -U postgres`
+5. Change password: `ALTER USER postgres WITH PASSWORD '<postgresql-postgres-password from authentik-postgresl secret>';`
+6. `exit`
+7. Restore permissions:
+```bash
+cat > /opt/bitnami/postgresql/conf/pg_hba.conf << EOF
+host     all             all             0.0.0.0/0               md5
+host     all             all             ::/0                    md5
+local    all             all                                     md5
+host     all             all        127.0.0.1/32                 md5
+host     all             all        ::1/128                      md5
+EOF
+```
+8. Reload postgresql config: `pg_ctl reload -D /bitnami/postgresql/data/`
