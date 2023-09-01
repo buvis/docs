@@ -24,7 +24,7 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
   a. Download amd64 binary: `curl -Lo ~/.local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
   b. Make it executable: `chmod +x ~/.local/bin/talosctl`
 4. Update all machineconfigs to `iscsi-tools` [latest version](https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools) at `.machine.install.extensions`: `talosctl -n $NODE_IPS edit machineconfig --mode=no-reboot`
-5. Update the nodes one by one. Important: don't forget the `--preserve` flag, because you are in single-node control plane scenario: `talosctl upgrade --nodes <NODE_IP> --image ghcr.io/siderolabs/installer:$TALOS_VERSION --preserve`
+5. Upgrade nodes: `upgrade-talos`
 6. Check nodes version: `talosctl -n $NODE_IPS version`
 
 ## Proxmox
