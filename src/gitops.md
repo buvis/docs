@@ -51,14 +51,10 @@ See [Flux documentation](https://fluxcd.io/docs/components/helm/helmreleases/)
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-name: longhorn
-namespace: longhorn-system
+  name: speedtest-exporter
+  namespace: monitoring
 spec:
-dependsOn:
-- name: ingress-nginx
-    namespace: kube-system
-- name: oauth2-proxy
-    namespace: kube-system
-- name: cert-manager
-    namespace: kube-system
+  dependsOn:
+  - name: kube-prometheus-stack
+    namespace: monitoring
 ```

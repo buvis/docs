@@ -78,7 +78,6 @@ nav:
   - gtd: namespaces/gtd.md
   - hajimari: namespaces/hajimari.md
   - kube-system: namespaces/kube-system.md
-  - longhorn-system: namespaces/longhorn-system.md
   - media: namespaces/media.md
   - minio-operator: namespaces/minio-operator.md
   - monitoring: namespaces/monitoring.md
