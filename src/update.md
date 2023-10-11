@@ -23,7 +23,7 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
 3. Update the client (`talosctl`)
   a. Download amd64 binary: `curl -Lo ~/.local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
   b. Make it executable: `chmod +x ~/.local/bin/talosctl`
-4. Update all machineconfigs to `iscsi-tools` [latest version](https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools) at `.machine.install.extensions`: `talosctl -n $NODE_IPS edit machineconfig --mode=no-reboot`
+4. Update all machineconfigs to `iscsi-tools` [latest version with digest](https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools) at `.machine.install.extensions`: `talosctl -n $NODE_IPS edit machineconfig --mode=no-reboot`
 5. Upgrade nodes: `upgrade-talos`
 6. Check nodes version: `talosctl -n $NODE_IPS version`
 
