@@ -21,7 +21,7 @@ This is rather brutal solution, but it works. I will improve it if I find a bett
     flux get sources git -A
     flux get sources chart -A
     ```
-- Get more information on helm release (start here when "install retries exhausted")
+- Get more information on helm release (start here when "install retries exhausted" or "Helm uninstall failed: uninstall: Release not loaded")
     ```bash
     kubectl describe helmrelease <RELEASE_NAME> -n <RELEASE_NAMESPACE>
     ```
