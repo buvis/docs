@@ -9,7 +9,7 @@ TODO: automate this through buvisctl by using [Authentik Terraform provider](htt
 Follow these steps for `<appname>` in `<namespace>` hosted at `<app_external_url>`
 
 1. Go to [Authentik administration interface](https://auth.buvis.net)
-2. Create new provider: `Applications - Providers - Create`
+2. Create new provider: `Applications - Providers - Create - Proxy Provider`
   - name: `<namespace>-<appname>`
   - authorization flow: `default-provider-authorization-implicit-consent`
   - type: `Forward auth (single application)`
@@ -33,12 +33,9 @@ Follow these steps for `<appname>` in `<namespace>` hosted at `<app_external_url
   4. Select `Group` tab
   5. Select `<namespace>-<appname>-users` group
   6. Click `Create`
-7. Create new outpost
-  - name: `<namespace>-<appname>`
-  - applications: `<namespace>-<appname>`
-  - configuration: change `kubernetes_ingress_class_name` to `nginx`
-9. Annotate the ingress of the application by `authentik.home.arpa/enabled: "true"`. Kyverno will add the annotations enabling the authentication flow for the application.
-10. Test authorized and unauthorized access to the application
+7. Add to proxy outpost: `Applications - Outposts - proxy-outpost - Edit`, select newly created application
+8. Annotate the ingress of the application by `authentik.home.arpa/enabled: "true"`. Kyverno will add the annotations enabling the authentication flow for the application.
+9. Test authorized and unauthorized access to the application
 
 ### Automate basic authentication
 
