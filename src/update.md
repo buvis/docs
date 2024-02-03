@@ -16,6 +16,8 @@ When Calico releases a new version of `tigera-operator`:
 
 ## Talos
 
+TODO: Automate step 4
+
 When siderolabs release a [new Talos version](https://github.com/siderolabs/talos/releases/latest) (`<VERSION_TAG>`):
 
 1. Check for new [issues](https://github.com/siderolabs/talos/issues) to see if the new version is safe to use
@@ -23,7 +25,13 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
 3. Update the client (`talosctl`)
   a. Download amd64 binary: `curl -Lo ~/.local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
   b. Make it executable: `chmod +x ~/.local/bin/talosctl`
-4. Update all machineconfigs to `iscsi-tools` [latest version with digest](https://github.com/siderolabs/extensions/pkgs/container/iscsi-tools) at `.machine.install.extensions`: `talosctl -n $NODE_IPS edit machineconfig --mode=no-reboot`
+4. Get installer image schematics ID from [Talos Linux Image Factory](https://factory.talos.dev)
+    a. Choose latest Talos version
+    b. Select `siderolabs/iscsi-tools` extension
+    c. Submit
+    d. Get Image schematic ID at `Your image schematic ID is:`
+    e. Confirm it is the same as `echo $TALOS_SCHEMATIC_ID`
+    f. If different, then update `.envrc`
 5. Upgrade nodes: `upgrade-talos`
 6. Check nodes version: `talosctl -n $NODE_IPS version`
 
