@@ -1,4 +1,4 @@
-## Flux
+[##](##.md) Flux
 
 This is automated using [Github Action](https://github.com/buvis/clusters/blob/main/.github/workflows/update-flux-home.yaml). Sometimes the Flux components may fail to start due to outdated CRDs. In that case, make sure you are on the latest Flux CLI (`brew upgrade flux`) and run `buvisctl update flux`.
 
@@ -8,7 +8,7 @@ When Calico releases a new version of `tigera-operator`:
 
 1. Determine `<VERSION_TAG>`: [Calico Releases | GitHub](https://github.com/projectcalico/calico/releases)
 2. Set temporary variable to use in following commands: `CALICO_VERSION=<VERSION_TAG>`
-3. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/$CALICO_VERSION/manifests/tigera-operator.yaml -O`
+3. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/release-<VERSION_TAG_MAIN>/manifests/tigera-operator.yaml -O`
 4. Initiate the upgrade: `kubectl apply -f tigera-operator.yaml`
 5. Remove the manifest: `rm tigera-operator.yaml`
 6. Update Talos installation patch: `vim infrastructure/talos/patch-all.yaml` and update `<VERSION_TAG>` in `/cluster/network/cni/custom/urls`
