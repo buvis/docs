@@ -1,5 +1,12 @@
 This hosts media related applications.
 
+## Radarr
+
+Trakt based RSS need to authorize with Trakt from time to time:
+
+1. Settings - Import Lists
+2. For each list press `Authenticate with Trakt` button
+
 ## Qbittorrent
 
 ### Configuration
