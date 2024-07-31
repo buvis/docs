@@ -6,9 +6,9 @@ This is automated using [Github Action](https://github.com/buvis/clusters/blob/m
 
 When Calico releases a new version of `tigera-operator`:
 
-1. Determine latest **minor** (like v3.28 and not v3.28.0) version `<VERSION_TAG>`: [Calico Releases | GitHub](https://github.com/projectcalico/calico/releases)
+1. Determine latest version `<VERSION_TAG>`: [Calico Releases | GitHub](https://github.com/projectcalico/calico/releases)
 2. Set temporary variable to use in following commands: `CALICO_VERSION=<VERSION_TAG>`
-3. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/release-$CALICO_VERSION/manifests/tigera-operator.yaml -O`
+3. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/$CALICO_VERSION/manifests/tigera-operator.yaml -O`
 4. Initiate the upgrade: `kubectl apply -f tigera-operator.yaml`
 5. Remove the manifest: `rm tigera-operator.yaml`
 6. Update Talos installation patch: `vim infrastructure/talos/patch-all.yaml` and update `<VERSION_TAG>` in `/cluster/network/cni/custom/urls`
