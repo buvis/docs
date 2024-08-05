@@ -5,14 +5,15 @@ Clone [https://github.com/buvis/clusters/](https://github.com/buvis/clusters/) r
 ### Tools
 
 1. Install the following tools on your workstation:
-    - [pre-commit](https://pre-commit.com/#installation)
-    - [direnv](https://direnv.net/docs/installation.html)
-    - [gnupg and sops](https://fluxcd.io/docs/guides/mozilla-sops)
-    - [talosctl](https://github.com/siderolabs/talos/releases)
-    - [jq](https://stedolan.github.io/jq/download)
-    - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
-    - [krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install)
-    - [minio kubectl plugin](https://github.com/minio/operator/tree/master/kubectl-minio)
+   - [pre-commit](https://pre-commit.com/#installation)
+   - [direnv](https://direnv.net/docs/installation.html)
+   - [gnupg and sops](https://fluxcd.io/docs/guides/mozilla-sops)
+   - [talosctl](https://github.com/siderolabs/talos/releases)
+   - [jq](https://stedolan.github.io/jq/download)
+   - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
+   - [krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install)
+   - [minio kubectl plugin](https://github.com/minio/operator/tree/master/kubectl-minio)
+   - [cilium-cli](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/#install-the-cilium-cli)
 2. Install scripts requirements: `pip install -r requirements.txt` in clusters repository root directory
 
 ### Services
@@ -27,12 +28,12 @@ Create accounts:
 2. Export `GITHUB_TOKEN` environment variable into `.envrc` files with [GitHub personal access token](https://github.com/settings/tokens) generated specifically for Flux
 3. Export `SLACK_WEBHOOK_URL` environment variable into `.envrc` files, get incoming webhook address `<SLACK_WEBHOOK_URL>` from [Slack](https://api.slack.com/apps)
 4. Enable [SOPS](https://github.com/mozilla/sops) for Flux
-    1. *(do only once in a lifetime)* Generate GPG key with no password protection. You can't protect the key with password, because Flux has no way of entering it when decrypting the secrets.
-    2. Get fingerprint of the key `<SOPS_KEY_FINGERPRINT>`
-        ```bash
-        gpg --list-secret-keys
-        ```
-    3. Export `SOPS_KEY_FINGERPRINT` environment variable into `.envrc` files with the value from previous step
+   1. _(do only once in a lifetime)_ Generate GPG key with no password protection. You can't protect the key with password, because Flux has no way of entering it when decrypting the secrets.
+   2. Get fingerprint of the key `<SOPS_KEY_FINGERPRINT>`
+      ```bash
+      gpg --list-secret-keys
+      ```
+   3. Export `SOPS_KEY_FINGERPRINT` environment variable into `.envrc` files with the value from previous step
 
 ### Network
 
@@ -62,22 +63,22 @@ This cluster is based on Virtual Machines provided by Proxmox.
 13. Use community repo: `sed -i '1i deb http://download.proxmox.com/debian bullseye pve-no-subscription\n' /etc/apt/sources.list`
 14. Disable enterprise repo: `sed -i 's/deb https:\/\/enterprise.proxmox.com\/debian\/pve bullseye pve-enterprise/# deb https:\/\/enterprise.proxmox.com\/debian\/pve bullseye pve-enterprise/g' /etc/apt/sources.list.d/pve-enterprise.list`
 15. Update the system: `apt update && apt full-upgrade`
-16. Install temperature sensors reading tools: `apt install xsensors` (then use `sensors` to  read temperature measurements)
+16. Install temperature sensors reading tools: `apt install xsensors` (then use `sensors` to read temperature measurements)
 17. Reboot: `reboot now`
 18. Remove subscription notice:
     1. Go to UI site source: `cd /usr/share/javascript/proxmox-widget-toolkit/`
     2. Backup the file you'll modify: `cp proxmoxlib.js proxmoxlib.js.bak`
     3. Edit `proxmoxlib.js`: `vi proxmoxlib.js`
-      - Find
-      ```
-      Ext.Msg.show({
-        title: gettext('No valid subscription'),
-      ```
-      - Replace with
-      ```
-      void({
-        title: gettext('No valid subscription'),
-      ```
+    - Find
+    ```
+    Ext.Msg.show({
+      title: gettext('No valid subscription'),
+    ```
+    - Replace with
+    ```
+    void({
+      title: gettext('No valid subscription'),
+    ```
     4. Restart Proxmox UI: `systemctl restart pveproxy.service`
     5. Clear browser cache and reconnect UI
 19. Create storage for Persistent Volumes:
@@ -89,18 +90,18 @@ This cluster is based on Virtual Machines provided by Proxmox.
 ### Create VM template
 
 1. SSH to Proxmox machine
-3. Get the latest image for VM: `wget https://github.com/siderolabs/talos/releases/download/$(curl --silent "https://api.github.com/repos/siderolabs/talos/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')/talos-amd64.iso`.
-4. Create VM: `qm create 9000 --name "talos" --memory 4096 --cpu cputype=host --cores 4 --serial0 socket --vga serial0 --net0 virtio,bridge=vmbr0,tag=20 --agent enabled=1,fstrim_cloned_disks=1`
-5. Import the image to local storage: `qm importdisk 9000 talos-amd64.iso local-lvm --format qcow2`
-6. Attach the disk to VM: `qm set 9000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9000-disk-0`
-7. Add cloudinit CDROM drive: `qm set 9000 --ide2 local:cloudinit`
-8. Set disk to boot: `qm set 9000 --boot c --bootdisk scsi0`
-9. Convert VM to template: `qm template 9000`
-10. Repeat steps 2-8 on every Proxmox machine. *NOTE* If you created a Proxmox cluster, then ID 9000 must be incremented as it must be unique inside the cluster.
+2. Get the latest image for VM: `wget https://github.com/siderolabs/talos/releases/download/$(curl --silent "https://api.github.com/repos/siderolabs/talos/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')/metal-amd64.iso`.
+3. Create VM: `qm create 9000 --name "talos" --memory 4096 --cpu cputype=host --cores 4 --serial0 socket --vga serial0 --net0 virtio,bridge=vmbr0,tag=20 --agent enabled=1,fstrim_cloned_disks=1`
+4. Import the image to local storage: `qm importdisk 9000 metal-amd64.iso local-lvm --format qcow2`
+5. Attach the disk to VM: `qm set 9000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9000-disk-0`
+6. Add cloudinit CDROM drive: `qm set 9000 --ide2 local:cloudinit`
+7. Set disk to boot: `qm set 9000 --boot c --bootdisk scsi0`
+8. Convert VM to template: `qm template 9000`
+9. Repeat steps 2-8 on every Proxmox machine. _NOTE_ If you created a Proxmox cluster, then ID 9000 must be incremented as it must be unique inside the cluster.
 
 ### Bootstrap
 
-2. Run `buvisctl install` in `cluster-home` directory
+Run `buvisctl bootstrap` in `cluster-home` directory.
 
 ## Office cluster
 
