@@ -1,3 +1,7 @@
+## Pods not starting after Talos update
+
+One reason can be that images used for kube-system do not match the Talos release. Run `talosctl upgrade-k8s` to resolve this.
+
 ## Pod not starting because Jiva volume is already mounted at more than one place
 
 This is rather brutal solution, but it works. I will improve it if I find a better way.
