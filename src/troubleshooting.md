@@ -12,27 +12,27 @@ This is rather brutal solution, but it works. I will improve it if I find a bett
 ## Flux can't reconcile a helmrelease
 
 - Get status of all helmreleases
-    ```bash
-    flux get helmreleases --all-namespaces
-    ```
-    or shorter
-    ```bash
-    flux get hr -A
-    ```
+  ```bash
+  flux get helmreleases --all-namespaces
+  ```
+  or shorter
+  ```bash
+  flux get hr -A
+  ```
 - Make sure that sources can be accessed (as there might be typos)
-    ```bash
-    flux get sources helm -A
-    flux get sources git -A
-    flux get sources chart -A
-    ```
+  ```bash
+  flux get sources helm -A
+  flux get sources git -A
+  flux get sources chart -A
+  ```
 - Get more information on helm release (start here when "install retries exhausted" or "Helm uninstall failed: uninstall: Release not loaded")
-    ```bash
-    kubectl describe helmrelease <RELEASE_NAME> -n <RELEASE_NAMESPACE>
-    ```
+  ```bash
+  kubectl describe helmrelease <RELEASE_NAME> -n <RELEASE_NAMESPACE>
+  ```
 - Restart when Flux gave up
-    ```bash
-    flux resume hr <RELEASE_NAME> -n <RELEASE_NAMESPACE>
-    ```
+  ```bash
+  flux resume hr <RELEASE_NAME> -n <RELEASE_NAMESPACE>
+  ```
 
 ## Get CPU temperature in Proxmox for Asus PN50
 
