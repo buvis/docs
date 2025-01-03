@@ -38,27 +38,27 @@ Trakt based RSS need to authorize with Trakt from time to time:
 ### Transcode Options
 
 1. Community:Re-order All Streams V2
-   + ProcessOrder: codecs,channels,languages,streamTypes
-   + channels: 7.1,5.1,2,1
-   + streamTypes: video,audio,subtitle
+    + ProcessOrder: codecs,channels,languages,streamTypes
+    + channels: 7.1,5.1,2,1
+    + streamTypes: video,audio,subtitle
 2. Community:Migz Remove Image Formats From File
 3. Community:Migz Clean Audio Streams
-   + language: eng,en,und,ces,cze,cs,cz
-   + commentary: false
-   + tag_title: false
+    + language: eng,en,und,ces,cze,cs,cz
+    + commentary: false
+    + tag_title: false
 4. Community:Migz Convert Audio Streams
-   + downmix: true
+    + downmix: true
 5. Community:Standardise Audio Stream Codecs
-   + audioCodec: aac
+    + audioCodec: aac
 6. Community:Drpeppershaker Extract Embedded Subtitles And Optionally Remove Them
-   + remove_subs: yes
+    + remove_subs: yes
 7. Community:Migz Transcode Using CPU & FFMPEG
-   + container: mkv
-   + enable_10bit: false
-   + force_conform: false
+    + container: mkv
+    + enable_10bit: false
+    + force_conform: false
 8. Community:New file size check
 9. Community:Keep original file dates and times after transcoding
-   + log: false
+    + log: false
 
 ### Backup
 
