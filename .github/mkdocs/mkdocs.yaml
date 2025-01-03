@@ -64,6 +64,7 @@ markdown_extensions:
 - toc:
     permalink: true
 - pymdownx.superfences
+- mdx_truly_sane_lists
 
 # Page tree
 nav:
