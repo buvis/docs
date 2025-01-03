@@ -35,31 +35,29 @@ Trakt based RSS need to authorize with Trakt from time to time:
 
 ## Tdarr
 
-### Configuration
+### Transcode Options
 
-1. Transcode options for a library:
-   a. Re-order all streams V2:
+1. Re-order all streams V2:
    - ProcessOrder: codecs,channels,languages,streamTypes
    - channels: 7.1,5.1,2,1
    - streamTypes: video,audio,subtitle
-     b. Migz-Remove image formats from file
-     c. Migz-Clean audio streams:
-   - language: eng,und,ces,cze
+2. Migz-Remove image formats from file
+3. Migz-Clean audio streams:
+   - language: eng,en,und,ces,cze,cs,cz
    - commentary: false
    - tag_title: false
-     d. Keep one audio stream
+4. Keep one audio stream
    - audioCodec: ac3
-   - language: depends on library
+   - language: eng,en,und,ces,cze,cs,cz
    - channels: 2
-     e. Remove subtitles
-     f. Migz-Transcode Using CPU & FFMPEG:
+5. Drpeppershaker Extract Embedded Subtitles And Optionally Remove Them
+   - remove_subs: yes
+6. Migz Transcode Using CPU & FFMPEG
    - container: mkv
    - enable_10bit: false
    - force_conform: false
-     g. New file size check
-     h. Keep original file dates and times after transcoding
-   - server: 127.0.0.1
-   - extensions: <empty>
+7. New file size check
+8. Keep original file dates and times after transcoding
    - log: false
 
 ### Backup
