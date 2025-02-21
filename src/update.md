@@ -23,15 +23,15 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
 1. Check for new [issues](https://github.com/siderolabs/talos/issues) to see if the new version is safe to use
 2. Set temporary variable to use in following commands: `export TALOS_VERSION=<VERSION_TAG>`
 3. Update the client (`talosctl`)
-   a. Download amd64 binary: `curl -Lo ~/.local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
-   b. Make it executable: `chmod +x ~/.local/bin/talosctl`
+    1. Download amd64 binary: `curl -Lo ~/.local/bin/talosctl https://github.com/siderolabs/talos/releases/download/$TALOS_VERSION/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64`
+    2. Make it executable: `chmod +x ~/.local/bin/talosctl`
 4. Get installer image schematics ID from [Talos Linux Image Factory](https://factory.talos.dev)
-   a. Choose latest Talos version
-   b. Select `siderolabs/iscsi-tools` extension
-   c. Submit
-   d. Get Image schematic ID at `Your image schematic ID is:`
-   e. Confirm it is the same as `echo $TALOS_SCHEMATIC_ID`
-   f. If different, then update `.envrc`
+    1. Choose latest Talos version
+    2. Select `siderolabs/iscsi-tools` extension
+    3. Submit
+    4. Get Image schematic ID at `Your image schematic ID is:`
+    5. Confirm it is the same as `echo $TALOS_SCHEMATIC_ID`
+    6. If different, then update `.envrc`
 5. Upgrade nodes: `upgrade-talos`
 6. Check nodes version: `talosctl -n $NODE_IPS version | awk '/^[[:space:]]*Client:/{ctx="Client"} /^[[:space:]]*NODE:/{ctx=$2} /^[[:space:]]*Tag:/{printf "%s %s %s\n", (ctx=="client"?"0":"1"), ctx, $2}' | sort | awk 'BEGIN {printf "\n%-15s %-8s\n", "Node", "Version"; print "--------------- --------"} {printf "%-15s %-8s\n", $2, $3}'`
 
