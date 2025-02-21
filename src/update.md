@@ -33,7 +33,7 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
    e. Confirm it is the same as `echo $TALOS_SCHEMATIC_ID`
    f. If different, then update `.envrc`
 5. Upgrade nodes: `upgrade-talos`
-6. Check nodes version: `talosctl -n $NODE_IPS version`
+6. Check nodes version: `talosctl -n $NODE_IPS version | awk '/^[[:space:]]*Client:/{ctx="Client"} /^[[:space:]]*NODE:/{ctx=$2} /^[[:space:]]*Tag:/{printf "%s %s %s\n", (ctx=="client"?"0":"1"), ctx, $2}' | sort | awk 'BEGIN {printf "\n%-15s %-8s\n", "Node", "Version"; print "--------------- --------"} {printf "%-15s %-8s\n", $2, $3}'`
 
 ## Proxmox
 
