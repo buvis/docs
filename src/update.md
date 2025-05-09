@@ -11,8 +11,6 @@ When Calico releases a new version of `tigera-operator`:
 3. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/$CALICO_VERSION/manifests/tigera-operator.yaml -O`
 4. Initiate the upgrade: `kubectl apply -f tigera-operator.yaml`
 5. Remove the manifest: `rm tigera-operator.yaml`
-6. Update Talos installation patch: `vim infrastructure/talos/patch-all.yaml` and update `<VERSION_TAG>` in `/cluster/network/cni/custom/urls`
-7. Update all machineconfigs: `talosctl -n $NODE_IPS edit machineconfig --mode=no-reboot` and update `<VERSION_TAG>` in `/cluster/network/cni/custom/urls`
 
 ## Talos
 
@@ -22,12 +20,12 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
 
 1. Check for new [issues](https://github.com/siderolabs/talos/issues) to see if the new version is safe to use
 2. Get installer image schematics ID from [Talos Linux Image Factory](https://factory.talos.dev)
-    1. Choose latest Talos version
-    2. Select `siderolabs/iscsi-tools` extension
-    3. Submit
-    4. Get Image schematic ID at `Your image schematic ID is:`
-    5. Confirm it is the same as `echo $TALOS_SCHEMATIC_ID`
-    6. If different, then update `.envrc`
+   1. Choose latest Talos version
+   2. Select `siderolabs/iscsi-tools` extension
+   3. Submit
+   4. Get Image schematic ID at `Your image schematic ID is:`
+   5. Confirm it is the same as `echo $TALOS_SCHEMATIC_ID`
+   6. If different, then update `.envrc`
 3. Upgrade nodes: `upgrade-talos`
 4. Check nodes version: `talosctl -n $NODE_IPS version | awk '/^[[:space:]]*Client:/{ctx="Client"} /^[[:space:]]*NODE:/{ctx=$2} /^[[:space:]]*Tag:/{printf "%s %s %s\n", (ctx=="client"?"0":"1"), ctx, $2}' | sort | awk 'BEGIN {printf "\n%-15s %-8s\n", "Node", "Version"; print "--------------- --------"} {printf "%-15s %-8s\n", $2, $3}'`
 
