@@ -18,8 +18,6 @@ TODO: CRDs should be installed first, however I need to find out how to keep the
 1. Disable ServiceMonitor for cert-manager: set `.spec.values.prometheus.servicemonitor.enabled=false` in `operations/kube-tools/cert-manager/helmrelease.yaml`
 2. Disable ServiceMonitor for kyverno: set `.spec.values.*.serviceMonitor.enabled=false` in `operations/kube-tools/kyverno/helmrelease.yaml`
 3. Disable ServiceMonitor for ingress-nginx: set `.spec.values.controller.metrics.serviceMonitor.enabled=false` in `operations/kube-tools/ingress-nginx/helmrelease.yaml`
-4. Disable ServiceMonitor for blocky: set `.spec.values.serviceMonitor.enabled=false` in `operations/network/blocky/helmrelease.yaml`
-5. Disable ServiceMonitor for minio: set `.spec.values.metrics.serviceMonitor.enabled=false` in `operations/storage/minio/helmrelease.yaml`
 
 ## Bootstrap
 
