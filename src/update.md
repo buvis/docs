@@ -14,20 +14,12 @@ When Calico releases a new version of `tigera-operator`:
 
 ## Talos
 
-TODO: Automate step 2
-
 When siderolabs release a [new Talos version](https://github.com/siderolabs/talos/releases/latest) (`<VERSION_TAG>`):
 
 1. Check for new [issues](https://github.com/siderolabs/talos/issues) to see if the new version is safe to use
-2. Get installer image schematics ID from [Talos Linux Image Factory](https://factory.talos.dev)
-   1. Choose latest Talos version
-   2. Select `siderolabs/iscsi-tools` extension
-   3. Submit
-   4. Get Image schematic ID at `Your image schematic ID is:`
-   5. Confirm it is the same as `echo $TALOS_SCHEMATIC_ID`
-   6. If different, then update `.envrc`
-3. Upgrade nodes: `upgrade-talos`
-4. Check nodes version: `talosctl -n $NODE_IPS version | awk '/^[[:space:]]*Client:/{ctx="Client"} /^[[:space:]]*NODE:/{ctx=$2} /^[[:space:]]*Tag:/{printf "%s %s %s\n", (ctx=="client"?"0":"1"), ctx, $2}' | sort | awk 'BEGIN {printf "\n%-15s %-8s\n", "Node", "Version"; print "--------------- --------"} {printf "%-15s %-8s\n", $2, $3}'`
+2. Update nodes: `buvisctl update talos`
+3. Check nodes versions: `talosctl -n $NODE_IPS version | awk '/^[[:space:]]*Client:/{ctx="Client"} /^[[:space:]]*NODE:/{ctx=$2} /^[[:space:]]*Tag:/{printf "%s %s %s\n", (ctx=="client"?"0":"1"), ctx, $2}' | sort | awk 'BEGIN {printf "\n%-15s %-8s\n", "Node", "Version"; print "--------------- --------"} {printf "%-15s %-8s\n", $2, $3}'`
+4. Push Talos version changes to the repository
 
 ## Proxmox
 

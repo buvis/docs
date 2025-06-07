@@ -22,19 +22,18 @@ TODO: CRDs should be installed first, however I need to find out how to keep the
 ## Bootstrap
 
 1. Set workstation's DNS to 1.1.1.1, because Blocky isn't running
-2. Update VM template:
-   a. Connect to Proxmox node: `ssh <NODE_NAME>`
-   b. Remove old Talos image: `rm metal-amd64.iso`
-   c. Destroy the old VM template: `qm destroy 9000`
-   d. Create new VM template by repeating [installation - Create VM template](installation.md#create-vm-template)
-3. Make sure that GitHub PAT (stored in GITHUB_TOKEN environment variable) is still valid, and update it eventually
-4. Run `buvisctl bootstrap` in cluster's directory.
-5. Fix all Flux reconciliation errors
-6. Enable monitoring by reversing the changes from [Disable monitoring chapter](operations.md#disable-monitoring)
+2. Make sure that GitHub PAT (stored in GITHUB_TOKEN environment variable) is still valid, and update it eventually
+3. Run `buvisctl bootstrap` in cluster's directory.
+4. Fix all Flux reconciliation errors
+5. Enable monitoring by reversing the changes from [Disable monitoring chapter](operations.md#disable-monitoring)
 
 ## Restore
 
 Run `./operations/storage/kopia/scripts/restore-pvcs.sh` in cluster's directory.
+
+### Authentik outpost
+
+Even after restoring the PVC, the outpost will not start. You need to login to authentik admin panel and remove applications from the `proxy-outpost` outpost, then add them again.
 
 ### MariaDB
 
