@@ -2,15 +2,9 @@
 
 This is automated using [Github Action](https://github.com/buvis/clusters/blob/main/.github/workflows/update-flux-home.yaml). Sometimes the Flux components may fail to start due to outdated CRDs. In that case, make sure you are on the latest Flux CLI (`brew upgrade fluxcd/tap/flux`) and run `buvisctl update flux`.
 
-## Calico
+## Cilium
 
-When Calico releases a new version of `tigera-operator`:
-
-1. Determine latest version `<VERSION_TAG>`: [Calico Releases | GitHub](https://github.com/projectcalico/calico/releases)
-2. Set temporary variable to use in following commands: `CALICO_VERSION=<VERSION_TAG>`
-3. Get the updated manifest: `curl https://raw.githubusercontent.com/projectcalico/calico/$CALICO_VERSION/manifests/tigera-operator.yaml -O`
-4. Initiate the upgrade: `kubectl apply -f tigera-operator.yaml`
-5. Remove the manifest: `rm tigera-operator.yaml`
+When new release of Cilium is available, you can update it using their [upgrade guide](https://docs.cilium.io/en/stable/operations/upgrade/).
 
 ## Talos
 
