@@ -97,6 +97,26 @@ This cluster is based on Virtual Machines provided by Proxmox.
     3. Connect to Proxmox management UI at `https://<server_ip>:8006`
     4. Create LVM Volume Group: `<NODENAME> - Disks - LVM`, `Create: Volume Group`, `Name: <NODENAME>-tank` on entire `/dev/sda`
 
+### Get Talos schematic ID
+
+Currently, the Talos schematic ID of images used in home cluster is `860c33aae2de83e2b2feef30dc06e26551d3a5f402f980ee9cd25c17dd9fc744`. This corresponds the following customization:
+
+```
+customization:
+    extraKernelArgs:
+         - isolcpus=6
+         - cpufreq.default_governor=performance
+         - amd_pstate=active
+    systemExtensions:
+        officialExtensions:
+            - siderolabs/amd-ucode
+            - siderolabs/amdgpu
+            - siderolabs/qemu-guest-agent
+            - siderolabs/util-linux-tools
+```
+
+If different customization is needed, you can find the schematic ID through [Talos Image Factory](https://factory.talos.dev). Then you need to update it in `.envrc` and `infrastructure/talos/patch-all.yaml`.
+
 ### Bootstrap
 
 Run `buvisctl bootstrap` in `cluster-home` directory.
