@@ -99,18 +99,17 @@ This cluster is based on Virtual Machines provided by Proxmox.
 
 ### Get Talos schematic ID
 
-Currently, the Talos schematic ID of images used in home cluster is `860c33aae2de83e2b2feef30dc06e26551d3a5f402f980ee9cd25c17dd9fc744`. This corresponds the following customization:
+Currently, the Talos schematic ID of images used in home cluster is `decca0d019b92170b9c7101da90f1ec0de7e9841b3d126ac4111743778d8eb1a`. This corresponds the following customization:
 
 ```
 customization:
     extraKernelArgs:
-         - isolcpus=6
-         - cpufreq.default_governor=performance
-         - amd_pstate=active
+        - amd_pstate=active
     systemExtensions:
         officialExtensions:
             - siderolabs/amd-ucode
             - siderolabs/amdgpu
+            - siderolabs/iscsi-tools
             - siderolabs/qemu-guest-agent
             - siderolabs/util-linux-tools
 ```
