@@ -1,6 +1,6 @@
 ## Backup
 
-1. Run `./operations/storage/kopia/scripts/backup-pvcs.sh` in cluster's directory.
+1. Run `backup-pvcs` in cluster's directory.
 2. Perform application specific backup for the applications considered critical
    - baikal
    - home-assistant
@@ -8,7 +8,7 @@
 
 ## Destroy
 
-Run `buvisctl destroy` in cluster's directory. It may fail if providers versions were updated. In that case, run `terraform init -upgrade` in `infrastructure/terraform` directory and try again.
+Run `buvisctl destroy` in cluster's directory. It may fail if providers versions were updated since the cluster creation. In that case, run `terraform init -upgrade` in `infrastructure/terraform` directory and try again.
 
 ## Bootstrap
 
@@ -25,9 +25,9 @@ Run `buvisctl destroy` in cluster's directory. It may fail if providers versions
 
 ## Restore storage
 
-1. Run `./operations/storage/kopia/scripts/restore-pvcs.sh` in cluster's directory.
-1. Run `./operations/storage/kopia/scripts/recreate-backup-jobs.sh` in cluster's directory.
+1. Run `recreate-backup-jobs` in cluster's directory.
+2. Run `restore-pvcs` in cluster's directory.
 
 ## Recreate Authentik outpost
 
-Run `./operations/security/authentik/scripts/restore-pvcs.sh` in cluster's directory.
+Run `trigger-outpost-creation` in cluster's directory.
