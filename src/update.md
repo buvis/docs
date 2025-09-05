@@ -20,3 +20,7 @@ When siderolabs release a [new Talos version](https://github.com/siderolabs/talo
 1. Connect to Proxmox node: `ssh <NODE_NAME>`
 2. Update packages: `apt update && apt dist-upgrade && apt autoremove`
 3. Reboot: `reboot`
+
+## Post-update
+
+Longhorn managers may need to be restarted after any update: `kubectl -n storage rollout restart ds/longhorn-manager`
