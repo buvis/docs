@@ -17,3 +17,10 @@ This hosts the applications to make my home smart.
 
 - `<room> Light` for the main light in the room: Bedroom Light
 - `<zone or location> <device type>` for other lights: TV Area Lamp, Couch Strip, Island Center Light, Living Room Dimmer
+
+## Home Assistant
+
+### Homematic IP
+
+- callback IP must be set to the Home Assistant server External IP assigned by cillium
+- callback port must be set to 5683 (coiot)
