@@ -6,10 +6,7 @@ This is automated using [Github Action](https://github.com/buvis/clusters/blob/m
 
 Cilium is deployed as a Talos inline manifest (not managed by Helm or Flux). Values are in `infrastructure/talos/cilium-values.yaml`.
 
-To upgrade:
-
-1. Run `buvisctl update cilium <version>` in the cluster directory
-2. Run `talosctl upgrade-k8s` to apply the new config
+To upgrade, run `buvisctl update cilium <version>` in the cluster directory. This renders manifests, updates the Talos patch for future bootstraps, and applies to the running cluster.
 
 ## Talos
 
