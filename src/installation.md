@@ -13,7 +13,7 @@ Clone [https://github.com/buvis/clusters/](https://github.com/buvis/clusters/) r
    - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
    - [krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install)
    - [minio kubectl plugin](https://github.com/minio/operator/tree/master/kubectl-minio)
-   - [cilium-cli](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/#install-the-cilium-cli)
+   - [helm](https://helm.sh/docs/intro/install)
 2. Install scripts requirements: `pip install -r requirements.txt` in clusters repository root directory
 
 ### Services

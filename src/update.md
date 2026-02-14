@@ -4,23 +4,12 @@ This is automated using [Github Action](https://github.com/buvis/clusters/blob/m
 
 ## Cilium
 
-When new release of Cilium is available, you can update it using their [upgrade guide](https://docs.cilium.io/en/stable/operations/upgrade/).
+Cilium is deployed as a Talos inline manifest (not managed by Helm or Flux). Values are in `infrastructure/talos/cilium-values.yaml`.
 
-As we are running Talos, the upgrade command needs to `--set` some additional values:
+To upgrade:
 
-```bash
-helm upgrade cilium oci://quay.io/cilium/charts/cilium \
-  --version X.Y.Z \
-  --namespace kube-system \
-  --set upgradeCompatibility=1.Y \
-  --set ipam.mode=kubernetes \
-  --set kubeProxyReplacement=true \
-  --set bgpControlPlane.enabled=true \
-  --set securityContext.capabilities.ciliumAgent="{CHOWN,KILL,NET_ADMIN,NET_RAW,IPC_LOCK,SYS_ADMIN,SYS_RESOURCE,DAC_OVERRIDE,FOWNER,SETGID,SETUID}" \
-  --set securityContext.capabilities.cleanCiliumState="{NET_ADMIN,SYS_ADMIN,SYS_RESOURCE}" \
-  --set cgroup.autoMount.enabled=false \
-  --set cgroup.hostRoot=/sys/fs/cgroup
-```
+1. Run `buvisctl update cilium <version>` in the cluster directory
+2. Run `talosctl upgrade-k8s` to apply the new config
 
 ## Talos
 
