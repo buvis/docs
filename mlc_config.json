@@ -1,0 +1,178 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https?://bjw-s\\.github\\.io/helm-charts"
+    },
+    {
+      "pattern": "^https?://angelnu\\.github\\.io/helm-charts"
+    },
+    {
+      "pattern": "^https?://charts\\.bitnami\\.com"
+    },
+    {
+      "pattern": "^https?://charts\\.fairwinds\\.com"
+    },
+    {
+      "pattern": "^https?://charts\\.charliehaley\\.dev"
+    },
+    {
+      "pattern": "^https?://charts\\.truecharts\\.org"
+    },
+    {
+      "pattern": "^https?://charts\\.appscode\\.com"
+    },
+    {
+      "pattern": "^https?://charts\\.longhorn\\.io"
+    },
+    {
+      "pattern": "^https?://charts\\.rook\\.io"
+    },
+    {
+      "pattern": "^https?://charts\\.searxng\\.org"
+    },
+    {
+      "pattern": "^https?://helm\\.linkerd\\.io"
+    },
+    {
+      "pattern": "^https?://helm\\.mittwald\\.de"
+    },
+    {
+      "pattern": "^https?://helm\\.ngc\\.nvidia\\.com"
+    },
+    {
+      "pattern": "^https?://helm\\.runix\\.net"
+    },
+    {
+      "pattern": "^https?://helm\\.samipsolutions\\.fi"
+    },
+    {
+      "pattern": "^https?://helm\\.twun\\.io"
+    },
+    {
+      "pattern": "^https?://helm\\.vector\\.dev"
+    },
+    {
+      "pattern": "^https?://helm\\.gitops\\.weave\\.works"
+    },
+    {
+      "pattern": "^https?://stefanprodan\\.github\\.io/podinfo"
+    },
+    {
+      "pattern": "^https?://kubernetes-sigs\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://kubernetes\\.github\\.io/dashboard"
+    },
+    {
+      "pattern": "^https?://kubernetes-charts\\.banzaicloud\\.com"
+    },
+    {
+      "pattern": "^https?://kubeview\\.benco\\.io"
+    },
+    {
+      "pattern": "^https?://openebs\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://openfaas\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://projectcalico\\.docs\\.tigera\\.io/charts"
+    },
+    {
+      "pattern": "^https?://inlets\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://isindir\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://istio-release\\.storage\\.googleapis\\.com"
+    },
+    {
+      "pattern": "^https?://jens-maus\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://jp-gouin\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://lordofsystem\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://mysql\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://blakeblackshear\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://bokysan\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://bugfest\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://crutonjohn\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://dcardellino\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://dysnix\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://xunholy\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://avakarev\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://1password\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://weaveworks\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://vernemq\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://travisghansen\\.github\\.io"
+    },
+    {
+      "pattern": "^https?://storage\\.googleapis\\.com/triggermesh-charts"
+    },
+    {
+      "pattern": "^https?://smueller18\\.gitlab\\.io"
+    },
+    {
+      "pattern": "^https?://repos\\.emqx\\.io"
+    },
+    {
+      "pattern": "^https?://releases\\.rancher\\.com"
+    },
+    {
+      "pattern": "^https?://raw\\.githubusercontent\\.com/kubernetes-csi"
+    },
+    {
+      "pattern": "^https?://raw\\.githubusercontent\\.com/zalando"
+    },
+    {
+      "pattern": "^https?://dl\\.cloudsmith\\.io"
+    },
+    {
+      "pattern": "^https?://0xacab\\.org/api"
+    },
+    {
+      "pattern": "^https?://gitlab\\.com/api/v4/projects/.*/packages/helm"
+    },
+    {
+      "pattern": "^https?://crm\\.buvis\\.net"
+    },
+    {
+      "pattern": "^https?://www\\.linkace\\.org"
+    },
+    {
+      "pattern": "^https?://www\\.talos\\.dev/v1\\.2"
+    },
+    {
+      "pattern": "^https?://github\\.com/minio/operator/tree/master"
+    }
+  ]
+}

@@ -25,3 +25,4 @@ jobs:
         use-quiet-mode: 'yes'
         use-verbose-mode: 'yes'
         folder-path: 'src'
+        config-file: 'mlc_config.json'

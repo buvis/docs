@@ -1,6 +1,6 @@
 ## Flux
 
-This is automated using [Github Action](https://github.com/buvis/clusters/blob/main/.github/workflows/update-flux-home.yaml). Sometimes the Flux components may fail to start due to outdated CRDs. In that case, make sure you are on the latest Flux CLI (`brew upgrade fluxcd/tap/flux`) and run `buvisctl update flux`.
+This is automated using [Github Action](https://github.com/buvis/clusters/blob/master/.github/workflows/update-flux-home.yaml). Sometimes the Flux components may fail to start due to outdated CRDs. In that case, make sure you are on the latest Flux CLI (`brew upgrade fluxcd/tap/flux`) and run `buvisctl update flux`.
 
 ## Cilium
 
