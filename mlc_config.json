@@ -1,4 +1,6 @@
 {
+  "retryOn429": true,
+  "retryCount": 3,
   "ignorePatterns": [
     {
       "pattern": "^https?://bjw-s\\.github\\.io/helm-charts"
