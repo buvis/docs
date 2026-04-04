@@ -168,6 +168,9 @@
       "pattern": "^https?://crm\\.buvis\\.net"
     },
     {
+      "pattern": "^https?://bookmarks\\.buvis\\.net"
+    },
+    {
       "pattern": "^https?://www\\.linkace\\.org"
     },
     {
