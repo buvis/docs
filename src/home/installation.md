@@ -43,10 +43,11 @@ The install script:
 2. Clones buvis/home as a bare repo to `~/.buvis`
 3. Checks out files into `$HOME`, backing up any conflicts
 4. Initializes git submodules
-5. Installs all packages (Brewfile on macOS, Scoop on Windows, mise on Linux)
+5. Installs all packages (Brewfile on macOS, Scoop on Windows, mise/libffi/fonts on Linux)
 6. Runs `mise install` for dev tool versions
 7. Configures git (credential helper, global excludesfile)
-8. Creates `~/git/src` directory
-9. Sets up Application Support symlinks (macOS) and lazygit symlink (Windows)
-10. Installs Claude CLI
-11. Sets up private configs from buvis/cellar if accessible
+8. Creates `~/git/src` and clones tracked repositories from gita config
+9. Sets up app config symlinks (macOS Application Support, Windows lazygit/PowerShell profile)
+10. Configures WSL environment (wsl.conf, npm prefix, locale, .bashrc-wsl, Windows home symlinks)
+11. Installs Claude CLI
+12. Sets up private configs from buvis/cellar if accessible
