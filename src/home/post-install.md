@@ -19,6 +19,14 @@ done < "$GITA_CSV"
 
 On WSL, use `$HOME/.config/wsl/gita/repos.csv` instead if it exists.
 
+## Reveal secrets
+
+On machines with your GPG key, decrypt git-secret managed files:
+
+```sh
+cfg secret reveal -f
+```
+
 ## WSL only
 
 1. Restart WSL after first install (`wsl --terminate Ubuntu` in cmd) to apply wsl.conf changes, then run `chmod -R a-x+X,u-x+rwX,go-wx+rX *` in affected directories to fix file coloring in vifm.
