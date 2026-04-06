@@ -178,6 +178,12 @@
     },
     {
       "pattern": "^https?://github\\.com/minio/operator/tree/master"
+    },
+    {
+      "pattern": "^https?://apple\\.stackexchange\\.com"
+    },
+    {
+      "pattern": "^https?://github\\.com/buvis/cellar"
     }
   ]
 }
