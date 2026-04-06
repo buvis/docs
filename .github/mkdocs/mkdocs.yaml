@@ -68,22 +68,32 @@ markdown_extensions:
 # Page tree
 nav:
 - Overview: index.md
-- Installation: installation.md
-- Update: update.md
-- Recreate: recreate.md
-- GitOps: gitops.md
-- Troubleshooting: troubleshooting.md
-- Namespaces:
-  - flux-system: namespaces/flux-system.md
-  - gtd: namespaces/gtd.md
-  - hajimari: namespaces/hajimari.md
-  - kube-system: namespaces/kube-system.md
-  - media: namespaces/media.md
-  - minio-operator: namespaces/minio-operator.md
-  - monitoring: namespaces/monitoring.md
-  - network: namespaces/network.md
-  - openfaas: namespaces/openfaas.md
-  - smarthome: namespaces/smarthome.md
-  - system-upgrade: namespaces/system-upgrade.md
-  - vpn: namespaces/vpn.md
-- Catalogue: catalogue/index.md
+- Home:
+  - Overview: home/index.md
+  - Installation: home/installation.md
+  - Post-install: home/post-install.md
+  - Operations: home/operations.md
+  - Catalogue: home/catalogue/index.md
+- Cluster:
+  - Overview: cluster/index.md
+  - Installation: cluster/installation.md
+  - Update: cluster/update.md
+  - Recreate: cluster/recreate.md
+  - GitOps: cluster/gitops.md
+  - Troubleshooting: cluster/troubleshooting.md
+  - Abandoned: cluster/abandoned.md
+  - High Availability: cluster/high-availability.md
+  - Namespaces:
+    - flux-system: cluster/namespaces/flux-system.md
+    - gtd: cluster/namespaces/gtd.md
+    - hajimari: cluster/namespaces/hajimari.md
+    - kube-system: cluster/namespaces/kube-system.md
+    - media: cluster/namespaces/media.md
+    - minio-operator: cluster/namespaces/minio-operator.md
+    - monitoring: cluster/namespaces/monitoring.md
+    - network: cluster/namespaces/network.md
+    - openfaas: cluster/namespaces/openfaas.md
+    - smarthome: cluster/namespaces/smarthome.md
+    - system-upgrade: cluster/namespaces/system-upgrade.md
+    - vpn: cluster/namespaces/vpn.md
+  - Catalogue: cluster/catalogue/index.md
