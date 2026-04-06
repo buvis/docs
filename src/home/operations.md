@@ -1,32 +1,21 @@
 # Operations
 
+All dotfile operations use the `dot` CLI provided by [buvis-gems](https://pypi.org/project/buvis-gems/). For interactive use, `dot tui` launches a terminal UI for staging, committing, and managing dotfiles.
+
 ## Update
 
-### macOS, WSL, and Linux
-
-1. Open terminal
-2. Go home: `cd $HOME`
-3. Pull updates: `cfgl`
-4. Stage updates: `cfgapa`
-5. Commit with a message: `cfgm "<MESSAGE>"`
-6. Push: `cfgp`
-
-### Windows
-
-1. Open cmd
-2. Go home: `cd %userprofile%`
-3. Pull updates: `cfgl.bat`
-4. Stage updates: `cfgapa.bat`
-5. Commit with a message: `cfgm.bat "<MESSAGE>"`
-6. Push: `cfgp.bat`
+1. Pull updates: `dot pull`
+2. Stage updates: `dot add`
+3. Commit with a message: `dot commit "<MESSAGE>"`
+4. Push: `dot push`
 
 ## Add encrypted file
 
-1. Register file for encryption: `cfg secret add path/to/file`
-2. Encrypt and check status: `cfgs`
-3. Stage encrypted file and metadata: `cfga path/to/file.secret .gitsecret`
-4. Commit: `cfgm "<MESSAGE>"`
-5. Push: `cfgp`
+1. Register file for encryption: `dot encrypt path/to/file`
+2. Check status: `dot status`
+3. Stage encrypted file: `dot add path/to/file.secret`
+4. Commit: `dot commit "<MESSAGE>"`
+5. Push: `dot push`
 
 ## Add default Python package
 

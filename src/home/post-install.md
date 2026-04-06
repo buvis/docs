@@ -4,9 +4,8 @@ Not all applications can be configured through dotfiles alone. The steps below r
 
 ## Configure git
 
-1. Navigate to dotfiles root: `cd $DOTFILES_ROOT`
-2. Store credentials: `cfg config credential.helper store`
-3. Honor global ignores: `git config --global core.excludesfile ~/.gitignore_global`
+1. Store credentials: `dot run config credential.helper store`
+2. Honor global ignores: `git config --global core.excludesfile ~/.gitignore_global`
 
 ## Install dev tools
 
