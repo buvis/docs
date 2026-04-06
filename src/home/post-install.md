@@ -2,33 +2,17 @@
 
 Not all applications can be configured through dotfiles alone. The steps below require manual action after running the install script.
 
-## Configure git
-
-1. Store credentials: `dot run config credential.helper store`
-2. Honor global ignores: `git config --global core.excludesfile ~/.gitignore_global`
-
-## Install dev tools
-
-Run `mise install` while at `$HOME` to install all managed tool versions.
-
 ## Set up repository management
 
-1. Create directory for git: `mkdir -p $HOME/git/src`
-2. Clone the repositories you need
-3. For each repository, register it with gita: `gita add .`
+1. Clone the repositories you need into `$HOME/git/src`
+2. For each repository, register it with gita: `gita add .`
 
 ## Platform-specific steps
-
-### macOS
-
-- **ruff**: symlink `~/.config/ruff/pyproject.toml` to `~/Library/Application Support/ruff/pyproject.toml`
-- **lazygit**: symlink `~/.config/lazygit/config.yml` to `~/Library/Application Support/lazygit/config.yml`
 
 ### Windows
 
 - Add `~\scripts\bin` to PATH
 - **PowerShell profile**: symlink `~/.config/powershell/Microsoft.PowerShell_profile.ps1` to the `PowerShell` folder in `shell:DocumentsLibrary`
-- **lazygit**: symlink `~/.config/lazygit/config.yml` to `%LOCALAPPDATA%\lazygit\config.yml`
 
 ### WSL
 
