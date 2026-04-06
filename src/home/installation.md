@@ -16,8 +16,7 @@ No manual prerequisites. The install script handles Scoop, packages, fonts, and 
 
 ### Linux
 
-1. Ensure `git`, `curl`, and `sudo` are available
-2. The install script handles mise, libffi-dev, and fonts automatically
+The install script bootstraps git and curl if missing, then handles mise, libffi, and fonts automatically. Supports apt, dnf, pacman, zypper, and apk. The only assumption is that `curl` is available to fetch the script and `sudo` is available for system packages.
 
 ### WSL
 
