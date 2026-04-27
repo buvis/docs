@@ -184,6 +184,9 @@
     },
     {
       "pattern": "^https?://github\\.com/buvis/cellar"
+    },
+    {
+      "pattern": "^https?://slack\\.com"
     }
   ]
 }
