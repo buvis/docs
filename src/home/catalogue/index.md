@@ -5,6 +5,7 @@ Configurations and tools managed by buvis/home, grouped by purpose.
 ## Shell
 
 - **bash** - shell configuration, aliases, functions via bash-it
+- **shell-hooks** - scheduled tasks run visibly at shell start, with machine-local overrides
 - **nushell** - alternative shell configuration
 - **starship** - cross-shell prompt theme
 
