@@ -6,3 +6,4 @@ BUVIS is a system built from several components that together create a personal 
 
 - **[Home](home/index.md)** - dotfiles, tool configurations, shell setup, and dev environment provisioning
 - **[Cluster](cluster/index.md)** - home Kubernetes clusters managed declaratively with Flux
+- **[Agents](agents/index.md)** - agent operations architecture and vocabulary

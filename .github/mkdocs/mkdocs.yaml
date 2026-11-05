@@ -97,3 +97,7 @@ nav:
     - system-upgrade: cluster/namespaces/system-upgrade.md
     - vpn: cluster/namespaces/vpn.md
   - Catalogue: cluster/catalogue/index.md
+- Agents:
+  - Overview: agents/index.md
+  - Components: agents/components.md
+  - Operations taxonomy: agents/taxonomy.md
