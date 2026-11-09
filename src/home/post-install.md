@@ -27,6 +27,16 @@ On machines with your GPG key, decrypt git-secret managed files:
 cfg secret reveal -f
 ```
 
+## Herdr pager (phone notifications)
+
+Herdr's `pager` mod reads its ntfy settings from `~/.local/.config/herdr-app/pager.local.json`. It is not in dotfiles. `~/.local` is the only thing you move to a new machine, so restoring `~/.local` is enough. On a machine without it, create the file (mode `0600`):
+
+```json
+{"url": "https://<ntfy-host>", "topic": "<topic>", "credentials": "<user>:<password>"}
+```
+
+`credentials` may be `""` if the server allows anonymous publishing. `NTFY_URL` and `NTFY_TOPIC` environment variables override `url` and `topic`. Without the file, phone delivery fails; desktop notifications still work.
+
 ## WSL only
 
 1. Restart WSL after first install (`wsl --terminate Ubuntu` in cmd) to apply wsl.conf changes, then run `chmod -R a-x+X,u-x+rwX,go-wx+rX *` in affected directories to fix file coloring in vifm.
